@@ -1,152 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-git-sha="fe21c935da3bede6053b56625b4d2e3c8082f4f2">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>EchoClause — Nuru Credit Demo</title>
-  <style>
-    :root { font-family: system-ui, sans-serif; color: #1a1a2e; }
-    body { max-width: 960px; margin: 0 auto; padding: 1.5rem; background: #f8f9fc; }
-    h1 { color: #16213e; }
-    .banner { background: #e8f4fd; border-left: 4px solid #0d6efd; padding: 0.75rem 1rem; margin-bottom: 1.5rem; }
-    table { width: 100%; border-collapse: collapse; background: #fff; margin-bottom: 1.5rem; }
-    th, td { border: 1px solid #dee2e6; padding: 0.5rem; text-align: left; font-size: 0.9rem; }
-    th { background: #16213e; color: #fff; }
-    .contradicted { color: #c0392b; font-weight: bold; }
-    .assets { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
-    .assets img { max-width: 100%; border: 1px solid #ccc; border-radius: 4px; }
-    footer { font-size: 0.85rem; color: #666; margin-top: 2rem; }
-  </style>
+  <meta name="description" content="Record the pitch. Photograph the contract. See every mismatch before you sign. Interactive replay from a recorded Gemma 4 run."/>
+  <meta property="og:title" content="EchoClause — Promise vs Contract Reconciliation"/>
+  <meta property="og:description" content="Multimodal evidence reconciliation for micro-loans. Fictional Nuru Credit demo — 5 contradictions detected."/>
+  <meta property="og:image" content="artifacts/og-preview.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <h1>EchoClause — What They Said vs. What You Sign</h1>
-  <div class="banner">
-    Interactive replay generated from a recorded Gemma 4 run.
-    Model: <strong>recorded_replay</strong> · Conflicts: <strong>5</strong>
-  </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-row">
+        <div class="logo">
+          <div class="logo-mark" aria-hidden="true">E</div>
+          <div>
+            <div class="logo-text">EchoClause</div>
+            <div class="logo-sub">Nuru Credit · Synthetic Demo</div>
+          </div>
+        </div>
+        <div class="header-badges">
+          <span class="badge badge-replay">Recorded Replay</span>
+          <span class="badge badge-gemma">Gemma 4 Hackathon</span>
+        </div>
+      </div>
+      <h1 class="hero-title">What they said versus what you sign.</h1>
+      <p class="hero-tagline">Record the pitch. Photograph the contract. See every mismatch before you sign.</p>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-value" id="stat-conflicts">—</div>
+          <div class="stat-label">Contradictions</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-claims">—</div>
+          <div class="stat-label">Extracted claims</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-model">—</div>
+          <div class="stat-label">Model (replay)</div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <h2>Demo Evidence (Nuru Credit)</h2>
-  <div class="assets">
-    <figure><img src="../assets/demo_case/advertisement.png" alt="Advertisement"/><figcaption>Advertisement</figcaption></figure>
-    <figure><img src="../assets/demo_case/support_chat.png" alt="Support chat"/><figcaption>Support chat</figcaption></figure>
-    <figure><img src="../assets/demo_case/contract.png" alt="Contract"/><figcaption>Contract</figcaption></figure>
-  </div>
+  <div id="loading" class="loading-state">Loading recorded demo data…</div>
+  <div id="error" class="error-state" hidden></div>
 
-  <h2>Detected Contradictions</h2>
-  <table>
-    <thead><tr><th>Field</th><th>Status</th><th>Severity</th><th>Evidence</th></tr></thead>
-    <tbody><tr>
-          <td>ClaimField.AUTOMATIC_DEBIT</td>
-          <td class="status contradicted">ComparisonStatus.CONTRADICTED</td>
-          <td>high</td>
-          <td>Promise: There is no automatic debit after repayment | Contract: Automatic debit authorization: enabled</td>
-        </tr>
-<tr>
-          <td>ClaimField.LATE_FEE</td>
-          <td class="status contradicted">ComparisonStatus.CONTRADICTED</td>
-          <td>high</td>
-          <td>Promise: Late payment is only a one-time ₦2,000 fee | Contract: Late fee: 5% of outstanding balance per week</td>
-        </tr>
-<tr>
-          <td>ClaimField.PLATFORM_FEE</td>
-          <td class="status contradicted">ComparisonStatus.CONTRADICTED</td>
-          <td>high</td>
-          <td>Promise: No hidden fees | Contract: Platform fee: ₦15,000</td>
-        </tr>
-<tr>
-          <td>ClaimField.REPAYMENT_TERM_DAYS</td>
-          <td class="status contradicted">ComparisonStatus.CONTRADICTED</td>
-          <td>medium</td>
-          <td>Promise: Repay in 30 days | Contract: Repayment term: 21 days</td>
-        </tr>
-<tr>
-          <td>ClaimField.TOTAL_REPAYMENT</td>
-          <td class="status contradicted">ComparisonStatus.CONTRADICTED</td>
-          <td>critical</td>
-          <td>Promise: You will repay exactly ₦100,000 | Contract: Total repayment: ₦115,000</td>
-        </tr>
-</tbody>
-  </table>
+  <main id="main-content" class="main" hidden>
+    <p class="replay-notice">
+      Interactive replay generated from a recorded Gemma 4 run.
+      This page displays frozen pipeline output — not live model inference.
+    </p>
 
-  <h2>Extracted Claims (sample)</h2>
-  <table>
-    <thead><tr><th>Source</th><th>Field</th><th>Raw value</th></tr></thead>
-    <tbody><tr>
-          <td>advertisement</td>
-          <td>ClaimField.PRINCIPAL</td>
-          <td>Borrow ₦100,000 today</td>
-        </tr>
-<tr>
-          <td>advertisement</td>
-          <td>ClaimField.INTEREST_RATE</td>
-          <td>0% interest</td>
-        </tr>
-<tr>
-          <td>advertisement</td>
-          <td>ClaimField.PLATFORM_FEE</td>
-          <td>No hidden fees</td>
-        </tr>
-<tr>
-          <td>advertisement</td>
-          <td>ClaimField.REPAYMENT_TERM_DAYS</td>
-          <td>Repay in 30 days</td>
-        </tr>
-<tr>
-          <td>sales_pitch</td>
-          <td>ClaimField.TOTAL_REPAYMENT</td>
-          <td>You will repay exactly ₦100,000</td>
-        </tr>
-<tr>
-          <td>sales_pitch</td>
-          <td>ClaimField.PROCESSING_FEE</td>
-          <td>There are no processing charges</td>
-        </tr>
-<tr>
-          <td>sales_pitch</td>
-          <td>ClaimField.LATE_FEE</td>
-          <td>Late payment is only a one-time ₦2,000 fee</td>
-        </tr>
-<tr>
-          <td>support_chat</td>
-          <td>ClaimField.AUTOMATIC_DEBIT</td>
-          <td>There is no automatic debit after repayment</td>
-        </tr>
-<tr>
-          <td>contract</td>
-          <td>ClaimField.PRINCIPAL</td>
-          <td>Principal: ₦100,000</td>
-        </tr>
-<tr>
-          <td>contract</td>
-          <td>ClaimField.PLATFORM_FEE</td>
-          <td>Platform fee: ₦15,000</td>
-        </tr>
-<tr>
-          <td>contract</td>
-          <td>ClaimField.TOTAL_REPAYMENT</td>
-          <td>Total repayment: ₦115,000</td>
-        </tr>
-<tr>
-          <td>contract</td>
-          <td>ClaimField.LATE_FEE</td>
-          <td>Late fee: 5% of outstanding balance per week</td>
-        </tr>
-<tr>
-          <td>contract</td>
-          <td>ClaimField.REPAYMENT_TERM_DAYS</td>
-          <td>Repayment term: 21 days</td>
-        </tr>
-<tr>
-          <td>contract</td>
-          <td>ClaimField.AUTOMATIC_DEBIT</td>
-          <td>Automatic debit authorization: enabled</td>
-        </tr>
-</tbody>
-  </table>
+    <div class="callout-banner" role="note">
+      <span class="callout-icon" aria-hidden="true">⚠</span>
+      <div class="callout-text">
+        <strong>Hidden fee detected:</strong> Contract includes a
+        <strong>₦15,000 platform charge</strong> never disclosed in marketing materials.
+        Total repayment rises from promised ₦100,000 to ₦115,000.
+      </div>
+    </div>
 
-  <footer>
-    EchoClause compares representations across supplied evidence.
-    It does not provide legal advice or determine legal enforceability.
+    <section class="architecture-section" aria-labelledby="arch-heading">
+      <h2 id="arch-heading">Architecture</h2>
+      <img src="artifacts/architecture.svg" alt="EchoClause pipeline: evidence ingestion, Gemma 4 extraction, normalization, reconciliation, conflict report" width="1200" height="220"/>
+    </section>
+
+    <div class="dashboard">
+      <section class="panel panel-evidence" aria-labelledby="evidence-heading">
+        <div class="panel-header">
+          <h2 id="evidence-heading">Evidence Gallery</h2>
+          <p>Multimodal inputs — click image to zoom</p>
+        </div>
+        <div class="panel-body">
+          <div id="evidence-tabs" class="evidence-tabs"></div>
+          <div id="evidence-viewer" class="evidence-viewer"></div>
+          <p id="evidence-caption" class="evidence-caption"></p>
+        </div>
+      </section>
+
+      <section class="panel panel-claims" aria-labelledby="claims-heading">
+        <div class="panel-header">
+          <h2 id="claims-heading">Extracted Claims</h2>
+          <p>Structured fields by evidence source</p>
+        </div>
+        <div class="panel-body" id="claims-by-source"></div>
+      </section>
+
+      <section class="panel panel-conflicts" aria-labelledby="conflicts-heading">
+        <div class="panel-header">
+          <h2 id="conflicts-heading">Conflict Matrix</h2>
+          <p>Promise vs contract — expand for evidence quotes</p>
+        </div>
+        <div class="panel-body">
+          <div id="conflict-list" class="conflict-list"></div>
+        </div>
+      </section>
+    </div>
+
+    <section class="questions-section" aria-labelledby="questions-heading">
+      <h2 id="questions-heading">Clarification Questions</h2>
+      <p style="margin:0 0 1rem;color:var(--ink-subtle);font-size:0.88rem;">Ask before you sign — generated from detected contradictions.</p>
+      <ol id="question-list" class="question-list"></ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>EchoClause compares representations across supplied evidence. It does not provide legal advice or determine legal enforceability.</p>
+    <div class="footer-meta">
+      <span id="footer-model">model: —</span>
+      <span id="footer-sha">sha: —</span>
+      <span id="footer-ts">run: —</span>
+      <span>badge: recorded replay</span>
+    </div>
   </footer>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Evidence zoom">
+    <button type="button" id="lightbox-close" class="lightbox-close" aria-label="Close">×</button>
+    <img id="lightbox-img" src="" alt=""/>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
