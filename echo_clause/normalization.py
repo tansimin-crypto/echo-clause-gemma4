@@ -87,12 +87,30 @@ def normalize_financial_term(args: NormalizeFinancialTermArgs) -> dict[str, Any]
         "frequency": None,
     }
 
-    if field in {
+    if field == ClaimField.LATE_FEE:
+        pct = re.search(r"(\d+(?:\.\d+)?)\s*%", text)
+        if pct:
+            result["normalized_value"] = float(pct.group(1))
+            result["unit"] = "percent"
+            result["currency"] = None
+            freq = _parse_frequency(text)
+            if freq:
+                result["frequency"] = freq
+        else:
+            amount, detected_currency = _parse_amount(text)
+            if amount is not None:
+                result["normalized_value"] = amount
+                result["currency"] = detected_currency or currency
+                result["unit"] = "currency"
+                freq = _parse_frequency(text)
+                if freq:
+                    result["frequency"] = freq
+
+    elif field in {
         ClaimField.PRINCIPAL,
         ClaimField.PLATFORM_FEE,
         ClaimField.PROCESSING_FEE,
         ClaimField.TOTAL_REPAYMENT,
-        ClaimField.LATE_FEE,
         ClaimField.CANCELLATION_FEE,
         ClaimField.PREPAYMENT_PENALTY,
     }:
