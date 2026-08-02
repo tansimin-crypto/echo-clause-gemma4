@@ -23,6 +23,21 @@ def test_calculate_total_repayment():
     assert result["total_repayment"] == 115000.0
 
 
+def test_compare_late_fee_flat_vs_percent():
+    result = compare_normalized_terms(
+        CompareNormalizedTermsArgs(
+            promise_value=2000,
+            contract_value=5,
+            field=ClaimField.LATE_FEE,
+            promise_evidence="one-time ₦2,000 fee",
+            contract_evidence="5% of outstanding balance per week",
+        )
+    )
+    assert result["status"] == "CONTRADICTED"
+    assert result["deterministic_difference"].startswith("₦2,000 one-time vs 5%")
+    assert "-1995" not in result["deterministic_difference"]
+
+
 def test_calculate_fee_percentage():
     result = calculate_fee_percentage(
         CalculateFeePercentageArgs(fee_amount=15000, principal=100000)
