@@ -124,7 +124,7 @@
       "normalized_value": 2000.0,
       "currency": "NGN",
       "unit": "currency",
-      "frequency": null,
+      "frequency": "one_time",
       "polarity": "neutral",
       "evidence_text": "Late payment is only a one-time ₦2,000 fee",
       "page_number": null,
@@ -217,9 +217,9 @@
       "field": "late_fee",
       "raw_value": "Late fee: 5% of outstanding balance per week",
       "normalized_value": 5.0,
-      "currency": "NGN",
-      "unit": "currency",
-      "frequency": null,
+      "currency": null,
+      "unit": "percent",
+      "frequency": "weekly",
       "polarity": "neutral",
       "evidence_text": "Late fee: 5% of outstanding balance per week",
       "page_number": null,
@@ -281,7 +281,7 @@
       "severity": "high",
       "deterministic_difference": "+1.00",
       "evidence_summary": "Promise: There is no automatic debit after repayment | Contract: Automatic debit authorization: enabled",
-      "clarification_question": "What is the correct automatic_debit — as promised (False) or as contracted (True)?"
+      "clarification_question": "What is the correct automatic_debit — as promised (There is no automatic debit after repayment) or as contracted (Automatic debit authorization: enabled)?"
     },
     {
       "canonical_field": "interest_rate",
@@ -305,9 +305,9 @@
       ],
       "status": "CONTRADICTED",
       "severity": "high",
-      "deterministic_difference": "-1995.00",
+      "deterministic_difference": "₦2,000 one-time vs 5% (Late fee: 5% of outstanding balance per week)",
       "evidence_summary": "Promise: Late payment is only a one-time ₦2,000 fee | Contract: Late fee: 5% of outstanding balance per week",
-      "clarification_question": "What is the correct late_fee — as promised (2000.0) or as contracted (5.0)?"
+      "clarification_question": "What is the correct late_fee — as promised (Late payment is only a one-time ₦2,000 fee) or as contracted (Late fee: 5% of outstanding balance per week)?"
     },
     {
       "canonical_field": "platform_fee",
@@ -321,7 +321,7 @@
       "severity": "high",
       "deterministic_difference": "+15000.00",
       "evidence_summary": "Promise: No hidden fees | Contract: Platform fee: ₦15,000",
-      "clarification_question": "What is the correct platform_fee — as promised (0.0) or as contracted (15000.0)?"
+      "clarification_question": "What is the correct platform_fee — as promised (No hidden fees) or as contracted (Platform fee: ₦15,000)?"
     },
     {
       "canonical_field": "principal",
@@ -361,7 +361,7 @@
       "severity": "medium",
       "deterministic_difference": "-9.00",
       "evidence_summary": "Promise: Repay in 30 days | Contract: Repayment term: 21 days",
-      "clarification_question": "What is the correct repayment_term_days — as promised (30) or as contracted (21)?"
+      "clarification_question": "What is the correct repayment_term_days — as promised (Repay in 30 days) or as contracted (Repayment term: 21 days)?"
     },
     {
       "canonical_field": "total_repayment",
@@ -375,7 +375,7 @@
       "severity": "critical",
       "deterministic_difference": "+15000.00",
       "evidence_summary": "Promise: You will repay exactly ₦100,000 | Contract: Total repayment: ₦115,000",
-      "clarification_question": "What is the correct total_repayment — as promised (100000.0) or as contracted (115000.0)?"
+      "clarification_question": "What is the correct total_repayment — as promised (You will repay exactly ₦100,000) or as contracted (Total repayment: ₦115,000)?"
     }
   ],
   "contradictions": [
@@ -391,7 +391,7 @@
       "severity": "high",
       "deterministic_difference": "+1.00",
       "evidence_summary": "Promise: There is no automatic debit after repayment | Contract: Automatic debit authorization: enabled",
-      "clarification_question": "What is the correct automatic_debit — as promised (False) or as contracted (True)?"
+      "clarification_question": "What is the correct automatic_debit — as promised (There is no automatic debit after repayment) or as contracted (Automatic debit authorization: enabled)?"
     },
     {
       "canonical_field": "late_fee",
@@ -403,9 +403,9 @@
       ],
       "status": "CONTRADICTED",
       "severity": "high",
-      "deterministic_difference": "-1995.00",
+      "deterministic_difference": "₦2,000 one-time vs 5% (Late fee: 5% of outstanding balance per week)",
       "evidence_summary": "Promise: Late payment is only a one-time ₦2,000 fee | Contract: Late fee: 5% of outstanding balance per week",
-      "clarification_question": "What is the correct late_fee — as promised (2000.0) or as contracted (5.0)?"
+      "clarification_question": "What is the correct late_fee — as promised (Late payment is only a one-time ₦2,000 fee) or as contracted (Late fee: 5% of outstanding balance per week)?"
     },
     {
       "canonical_field": "platform_fee",
@@ -419,7 +419,7 @@
       "severity": "high",
       "deterministic_difference": "+15000.00",
       "evidence_summary": "Promise: No hidden fees | Contract: Platform fee: ₦15,000",
-      "clarification_question": "What is the correct platform_fee — as promised (0.0) or as contracted (15000.0)?"
+      "clarification_question": "What is the correct platform_fee — as promised (No hidden fees) or as contracted (Platform fee: ₦15,000)?"
     },
     {
       "canonical_field": "repayment_term_days",
@@ -433,7 +433,7 @@
       "severity": "medium",
       "deterministic_difference": "-9.00",
       "evidence_summary": "Promise: Repay in 30 days | Contract: Repayment term: 21 days",
-      "clarification_question": "What is the correct repayment_term_days — as promised (30) or as contracted (21)?"
+      "clarification_question": "What is the correct repayment_term_days — as promised (Repay in 30 days) or as contracted (Repayment term: 21 days)?"
     },
     {
       "canonical_field": "total_repayment",
@@ -447,15 +447,15 @@
       "severity": "critical",
       "deterministic_difference": "+15000.00",
       "evidence_summary": "Promise: You will repay exactly ₦100,000 | Contract: Total repayment: ₦115,000",
-      "clarification_question": "What is the correct total_repayment — as promised (100000.0) or as contracted (115000.0)?"
+      "clarification_question": "What is the correct total_repayment — as promised (You will repay exactly ₦100,000) or as contracted (Total repayment: ₦115,000)?"
     }
   ],
   "clarification_questions": [
-    "What is the correct automatic_debit — as promised (False) or as contracted (True)?",
-    "What is the correct late_fee — as promised (2000.0) or as contracted (5.0)?",
-    "What is the correct platform_fee — as promised (0.0) or as contracted (15000.0)?",
-    "What is the correct repayment_term_days — as promised (30) or as contracted (21)?",
-    "What is the correct total_repayment — as promised (100000.0) or as contracted (115000.0)?"
+    "What is the correct automatic_debit — as promised (There is no automatic debit after repayment) or as contracted (Automatic debit authorization: enabled)?",
+    "What is the correct late_fee — as promised (Late payment is only a one-time ₦2,000 fee) or as contracted (Late fee: 5% of outstanding balance per week)?",
+    "What is the correct platform_fee — as promised (No hidden fees) or as contracted (Platform fee: ₦15,000)?",
+    "What is the correct repayment_term_days — as promised (Repay in 30 days) or as contracted (Repayment term: 21 days)?",
+    "What is the correct total_repayment — as promised (You will repay exactly ₦100,000) or as contracted (Total repayment: ₦115,000)?"
   ],
   "disclaimer": "EchoClause compares representations across supplied evidence. It does not provide legal advice or determine legal enforceability.",
   "demo_validation": {
@@ -475,5 +475,5 @@
     "mode": "recorded"
   },
   "model_id": "recorded_replay",
-  "timestamp_utc": "20260802T070416Z"
+  "timestamp_utc": "20260802T134614Z"
 }
