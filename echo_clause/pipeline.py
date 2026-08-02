@@ -61,9 +61,9 @@ def claims_from_transcript_fallback(audio_path: Path, source_id: str) -> Extract
     claims: list[SourceClaim] = []
     lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
     field_map = [
-        ("total_repayment", ClaimField.TOTAL_REPAYMENT, "Repay exactly ₦100,000"),
+        ("total_repayment", ClaimField.TOTAL_REPAYMENT, "Repay exactly $1,000"),
         ("processing_fee", ClaimField.PROCESSING_FEE, "no processing charges"),
-        ("late_fee", ClaimField.LATE_FEE, "one-time ₦2,000 fee"),
+        ("late_fee", ClaimField.LATE_FEE, "one-time $20 fee"),
     ]
     for i, (cid, field, evidence) in enumerate(field_map):
         raw = lines[i] if i < len(lines) else evidence
