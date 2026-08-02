@@ -25,7 +25,7 @@ def test_source_claim_all_fields():
         field=ClaimField.PLATFORM_FEE,
         raw_value="No hidden fees",
         normalized_value=0.0,
-        currency="NGN",
+        currency="USD",
         unit="currency",
         frequency=None,
         polarity="negative",
@@ -38,7 +38,7 @@ def test_source_claim_all_fields():
         needs_review=False,
     )
     assert claim.field == ClaimField.PLATFORM_FEE
-    assert claim.currency == "NGN"
+    assert claim.currency == "USD"
 
 
 def test_comparison_result_status_enum():
@@ -48,28 +48,28 @@ def test_comparison_result_status_enum():
         contract_claim_ids=["c1"],
         status=ComparisonStatus.CONTRADICTED,
         severity="critical",
-        deterministic_difference="+15000",
-        evidence_summary="Repay 100k vs 115k",
-        clarification_question="Why is total ₦115,000?",
+        deterministic_difference="+150",
+        evidence_summary="Repay $1k vs $1.15k",
+        clarification_question="Why is total $1,150?",
     )
     assert result.status == ComparisonStatus.CONTRADICTED
 
 
 def test_tool_call_schemas():
-    norm = NormalizeFinancialTermArgs(raw_text="₦100,000", field=ClaimField.PRINCIPAL)
+    norm = NormalizeFinancialTermArgs(raw_text="$1,000", field=ClaimField.PRINCIPAL)
     assert norm.field == ClaimField.PRINCIPAL
 
-    repay = CalculateTotalRepaymentArgs(principal=100000, platform_fee=15000)
-    assert repay.platform_fee == 15000
+    repay = CalculateTotalRepaymentArgs(principal=1000, platform_fee=150)
+    assert repay.platform_fee == 150
 
-    fee_pct = CalculateFeePercentageArgs(fee_amount=15000, principal=100000)
-    assert fee_pct.fee_amount == 15000
+    fee_pct = CalculateFeePercentageArgs(fee_amount=150, principal=1000)
+    assert fee_pct.fee_amount == 150
 
 
 def test_tool_call_request_allowlist_names():
     req = ToolCallRequest(
         name="calculate_fee_percentage",
-        arguments={"fee_amount": 15000, "principal": 100000},
+        arguments={"fee_amount": 150, "principal": 1000},
     )
     assert req.name == "calculate_fee_percentage"
 
@@ -116,7 +116,7 @@ def test_demo_gold_schema():
                 "id": "c1",
                 "canonical_field": "platform_fee",
                 "promise_summary": "No hidden fees",
-                "contract_summary": "Platform fee ₦15,000",
+                "contract_summary": "Platform fee $150",
                 "expected_status": "CONTRADICTED",
                 "severity": "high",
             }
