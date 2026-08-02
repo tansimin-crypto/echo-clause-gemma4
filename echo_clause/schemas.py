@@ -85,13 +85,13 @@ class CalculateTotalRepaymentArgs(BaseModel):
     platform_fee: float = 0.0
     processing_fee: float = 0.0
     interest_rate_percent: float = 0.0
-    currency: str = "NGN"
+    currency: str = "USD"
 
 
 class CalculateFeePercentageArgs(BaseModel):
     fee_amount: float
     principal: float
-    currency: str = "NGN"
+    currency: str = "USD"
 
 
 class CompareNormalizedTermsArgs(BaseModel):
