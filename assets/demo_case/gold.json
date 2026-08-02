@@ -8,22 +8,22 @@
       "id": "c1_platform_fee",
       "canonical_field": "platform_fee",
       "promise_summary": "No hidden fees (advertisement)",
-      "contract_summary": "Platform fee \u20a615,000",
+      "contract_summary": "Platform fee $150",
       "expected_status": "CONTRADICTED",
       "severity": "high"
     },
     {
       "id": "c2_total_repayment",
       "canonical_field": "total_repayment",
-      "promise_summary": "Repay \u20a6100,000 (ad + sales pitch)",
-      "contract_summary": "Total repayment \u20a6115,000",
+      "promise_summary": "Repay $1,000 (ad + sales pitch)",
+      "contract_summary": "Total repayment $1,150",
       "expected_status": "CONTRADICTED",
       "severity": "critical"
     },
     {
       "id": "c3_late_fee",
       "canonical_field": "late_fee",
-      "promise_summary": "One-time \u20a62,000 late fee (sales pitch)",
+      "promise_summary": "One-time $20 late fee (sales pitch)",
       "contract_summary": "5% of outstanding balance per week",
       "expected_status": "CONTRADICTED",
       "severity": "high"
