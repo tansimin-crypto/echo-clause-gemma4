@@ -63,6 +63,8 @@ def _kaggle_authenticated() -> bool:
             [_find_kaggle_exe(), "config", "view"],
             capture_output=True,
             text=True,
+            encoding="utf-8",
+            errors="replace",
             timeout=30,
         )
         return result.returncode == 0 and "username:" in result.stdout
