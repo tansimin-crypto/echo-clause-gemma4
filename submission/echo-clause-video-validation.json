@@ -4,20 +4,233 @@
   "actual_duration_seconds": 90.0,
   "within_tolerance": true,
   "video": "D:\\kaggle\\gemma-finance\\echo-clause-gemma4\\submission\\echo-clause-demo-90s.mp4",
-  "video_bytes": 3235571,
+  "video_sha256": "8f3b40af16da88fa80377cc1dc69b8ae9337c83253c5f85f40fe82900b28879b",
   "srt": "D:\\kaggle\\gemma-finance\\echo-clause-gemma4\\submission\\echo-clause-demo-90s.srt",
   "vtt": "D:\\kaggle\\gemma-finance\\echo-clause-gemma4\\submission\\echo-clause-demo-90s.vtt",
   "bib_tooling": "D:\\CodexWorkspaces\\bib",
   "kokoro_model": "D:\\CodexWorkspaces\\bib\\work\\voice\\kokoro\\models\\kokoro-v1.0.onnx",
   "ffmpeg": "D:\\CodexWorkspaces\\bib\\work\\video\\vendor\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
-  "render_command": "Set-Location D:\\Agent\\echo-clause-video; python render_video.py",
-  "scene_count": 7,
-  "subtitle_cue_count": 16,
-  "resolution": "1920x1080",
-  "fps": 30,
   "disclosures": {
     "narration": "AI voice synthesized locally with Kokoro-82M am_michael at speed 1.08",
     "demo": "Synthetic Nuru Credit assets; recorded Gemma replay — not live inference",
     "data": "No real personal or company data"
-  }
+  },
+  "scenes": [
+    {
+      "index": 1,
+      "id": "hook",
+      "scene_duration_seconds": 9.0,
+      "scene_start_seconds": 0,
+      "cues": [
+        {
+          "index": 1,
+          "caption": "Zero interest. No hidden fees.",
+          "source_sample_frames": 55296,
+          "source_duration_seconds": 2.304,
+          "scene_start_seconds": 0.35,
+          "scene_end_seconds": 2.654,
+          "absolute_start_seconds": 0.35,
+          "absolute_end_seconds": 2.654
+        },
+        {
+          "index": 2,
+          "caption": "Then you sign — and the contract tells a different story.",
+          "source_sample_frames": 80384,
+          "source_duration_seconds": 3.349333,
+          "scene_start_seconds": 3.044,
+          "scene_end_seconds": 6.393333,
+          "absolute_start_seconds": 3.044,
+          "absolute_end_seconds": 6.393333
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "id": "evidence",
+      "scene_duration_seconds": 15.0,
+      "scene_start_seconds": 9.0,
+      "cues": [
+        {
+          "index": 1,
+          "caption": "Four evidence sources for fictional lender Nuru Credit:",
+          "source_sample_frames": 85504,
+          "source_duration_seconds": 3.562667,
+          "scene_start_seconds": 0.35,
+          "scene_end_seconds": 3.912667,
+          "absolute_start_seconds": 9.35,
+          "absolute_end_seconds": 12.912667
+        },
+        {
+          "index": 2,
+          "caption": "advertisement, sales pitch audio, support chat, and contract.",
+          "source_sample_frames": 93696,
+          "source_duration_seconds": 3.904,
+          "scene_start_seconds": 4.052667,
+          "scene_end_seconds": 7.956667,
+          "absolute_start_seconds": 13.052667,
+          "absolute_end_seconds": 16.956667
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "id": "extraction",
+      "scene_duration_seconds": 20.0,
+      "scene_start_seconds": 24.0,
+      "cues": [
+        {
+          "index": 1,
+          "caption": "Gemma 4 extracts structured claims from images and audio",
+          "source_sample_frames": 94208,
+          "source_duration_seconds": 3.925333,
+          "scene_start_seconds": 0.35,
+          "scene_end_seconds": 4.275333,
+          "absolute_start_seconds": 24.35,
+          "absolute_end_seconds": 28.275333
+        },
+        {
+          "index": 2,
+          "caption": "with verbatim evidence quotes.",
+          "source_sample_frames": 46080,
+          "source_duration_seconds": 1.92,
+          "scene_start_seconds": 4.415333,
+          "scene_end_seconds": 6.335333,
+          "absolute_start_seconds": 28.415333,
+          "absolute_end_seconds": 30.335333
+        },
+        {
+          "index": 3,
+          "caption": "Recorded replay — not live inference.",
+          "source_sample_frames": 57856,
+          "source_duration_seconds": 2.410667,
+          "scene_start_seconds": 6.675333,
+          "scene_end_seconds": 9.086,
+          "absolute_start_seconds": 30.675333,
+          "absolute_end_seconds": 33.086
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "id": "conflicts",
+      "scene_duration_seconds": 20.0,
+      "scene_start_seconds": 44.0,
+      "cues": [
+        {
+          "index": 1,
+          "caption": "Five contradictions detected.",
+          "source_sample_frames": 49152,
+          "source_duration_seconds": 2.048,
+          "scene_start_seconds": 0.35,
+          "scene_end_seconds": 2.398,
+          "absolute_start_seconds": 44.35,
+          "absolute_end_seconds": 46.398
+        },
+        {
+          "index": 2,
+          "caption": "A hidden platform fee of fifteen thousand naira",
+          "source_sample_frames": 66048,
+          "source_duration_seconds": 2.752,
+          "scene_start_seconds": 2.738,
+          "scene_end_seconds": 5.49,
+          "absolute_start_seconds": 46.738,
+          "absolute_end_seconds": 49.49
+        },
+        {
+          "index": 3,
+          "caption": "never appeared in the marketing.",
+          "source_sample_frames": 39936,
+          "source_duration_seconds": 1.664,
+          "scene_start_seconds": 5.78,
+          "scene_end_seconds": 7.444,
+          "absolute_start_seconds": 49.78,
+          "absolute_end_seconds": 51.444
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "id": "evidence-detail",
+      "scene_duration_seconds": 13.0,
+      "scene_start_seconds": 64.0,
+      "cues": [
+        {
+          "index": 1,
+          "caption": "Each conflict cites quoted evidence.",
+          "source_sample_frames": 55296,
+          "source_duration_seconds": 2.304,
+          "scene_start_seconds": 0.35,
+          "scene_end_seconds": 2.654,
+          "absolute_start_seconds": 64.35,
+          "absolute_end_seconds": 66.654
+        },
+        {
+          "index": 2,
+          "caption": "Promised no hidden fees — contract shows fifteen thousand naira. Status: contradicted.",
+          "source_sample_frames": 135168,
+          "source_duration_seconds": 5.632,
+          "scene_start_seconds": 2.794,
+          "scene_end_seconds": 8.426,
+          "absolute_start_seconds": 66.794,
+          "absolute_end_seconds": 72.426
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "id": "questions",
+      "scene_duration_seconds": 8.0,
+      "scene_start_seconds": 77.0,
+      "cues": [
+        {
+          "index": 1,
+          "caption": "EchoClause generates clarification questions",
+          "source_sample_frames": 76288,
+          "source_duration_seconds": 3.178667,
+          "scene_start_seconds": 0.35,
+          "scene_end_seconds": 3.528667,
+          "absolute_start_seconds": 77.35,
+          "absolute_end_seconds": 80.528667
+        },
+        {
+          "index": 2,
+          "caption": "before you sign.",
+          "source_sample_frames": 29696,
+          "source_duration_seconds": 1.237333,
+          "scene_start_seconds": 3.668667,
+          "scene_end_seconds": 4.906,
+          "absolute_start_seconds": 80.668667,
+          "absolute_end_seconds": 81.906
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "id": "tagline",
+      "scene_duration_seconds": 5.0,
+      "scene_start_seconds": 85.0,
+      "cues": [
+        {
+          "index": 1,
+          "caption": "EchoClause.",
+          "source_sample_frames": 28672,
+          "source_duration_seconds": 1.194667,
+          "scene_start_seconds": 0.35,
+          "scene_end_seconds": 1.544667,
+          "absolute_start_seconds": 85.35,
+          "absolute_end_seconds": 86.544667
+        },
+        {
+          "index": 2,
+          "caption": "What they said versus what you sign.",
+          "source_sample_frames": 48128,
+          "source_duration_seconds": 2.005333,
+          "scene_start_seconds": 1.834667,
+          "scene_end_seconds": 3.84,
+          "absolute_start_seconds": 86.834667,
+          "absolute_end_seconds": 88.84
+        }
+      ]
+    }
+  ]
 }
