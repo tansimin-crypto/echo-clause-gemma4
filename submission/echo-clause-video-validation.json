@@ -1,12 +1,11 @@
 {
   "title": "EchoClause — What They Said vs. What You Sign",
-  "target_duration_seconds": 90.0,
-  "actual_duration_seconds": 90.0,
+  "target_duration_seconds": 52.0,
+  "actual_duration_seconds": 52.0,
   "within_tolerance": true,
   "video": "D:\\kaggle\\gemma-finance\\echo-clause-gemma4\\submission\\echo-clause-demo-90s.mp4",
-  "video_sha256": "8b1e86056a6e8c58dee8656219349887cf7809b7caf9842dd93505db86f335d1",
-  "srt": "D:\\kaggle\\gemma-finance\\echo-clause-gemma4\\submission\\echo-clause-demo-90s.srt",
-  "vtt": "D:\\kaggle\\gemma-finance\\echo-clause-gemma4\\submission\\echo-clause-demo-90s.vtt",
+  "video_sha256": "7aba9b6264bb082fea87c528d52ce6bfc1e89d7d81c065175ea6cbe5a41d79fd",
+  "subtitles": "none",
   "bib_tooling": "D:\\CodexWorkspaces\\bib",
   "kokoro_model": "D:\\CodexWorkspaces\\bib\\work\\voice\\kokoro\\models\\kokoro-v1.0.onnx",
   "ffmpeg": "D:\\CodexWorkspaces\\bib\\work\\video\\vendor\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
@@ -19,7 +18,7 @@
     {
       "index": 1,
       "id": "hook",
-      "scene_duration_seconds": 9.0,
+      "scene_duration_seconds": 6.5,
       "scene_start_seconds": 0,
       "cues": [
         {
@@ -27,208 +26,208 @@
           "caption": "Zero interest. No hidden fees.",
           "source_sample_frames": 55296,
           "source_duration_seconds": 2.304,
-          "scene_start_seconds": 0.35,
-          "scene_end_seconds": 2.654,
-          "absolute_start_seconds": 0.35,
-          "absolute_end_seconds": 2.654
+          "scene_start_seconds": 0.15,
+          "scene_end_seconds": 2.454,
+          "absolute_start_seconds": 0.15,
+          "absolute_end_seconds": 2.454
         },
         {
           "index": 2,
           "caption": "Then you sign — and the contract tells a different story.",
           "source_sample_frames": 80384,
           "source_duration_seconds": 3.349333,
-          "scene_start_seconds": 3.044,
-          "scene_end_seconds": 6.393333,
-          "absolute_start_seconds": 3.044,
-          "absolute_end_seconds": 6.393333
+          "scene_start_seconds": 2.514,
+          "scene_end_seconds": 5.863333,
+          "absolute_start_seconds": 2.514,
+          "absolute_end_seconds": 5.863333
         }
       ]
     },
     {
       "index": 2,
       "id": "evidence",
-      "scene_duration_seconds": 15.0,
-      "scene_start_seconds": 9.0,
+      "scene_duration_seconds": 8.5,
+      "scene_start_seconds": 6.5,
       "cues": [
         {
           "index": 1,
           "caption": "Four evidence sources for fictional lender Nuru Credit:",
           "source_sample_frames": 85504,
           "source_duration_seconds": 3.562667,
-          "scene_start_seconds": 0.35,
-          "scene_end_seconds": 3.912667,
-          "absolute_start_seconds": 9.35,
-          "absolute_end_seconds": 12.912667
+          "scene_start_seconds": 0.15,
+          "scene_end_seconds": 3.712667,
+          "absolute_start_seconds": 6.65,
+          "absolute_end_seconds": 10.212667
         },
         {
           "index": 2,
           "caption": "advertisement, sales pitch audio, support chat, and contract.",
           "source_sample_frames": 93696,
           "source_duration_seconds": 3.904,
-          "scene_start_seconds": 4.052667,
-          "scene_end_seconds": 7.956667,
-          "absolute_start_seconds": 13.052667,
-          "absolute_end_seconds": 16.956667
+          "scene_start_seconds": 3.772667,
+          "scene_end_seconds": 7.676667,
+          "absolute_start_seconds": 10.272667,
+          "absolute_end_seconds": 14.176667
         }
       ]
     },
     {
       "index": 3,
       "id": "extraction",
-      "scene_duration_seconds": 20.0,
-      "scene_start_seconds": 24.0,
+      "scene_duration_seconds": 9.5,
+      "scene_start_seconds": 15.0,
       "cues": [
         {
           "index": 1,
           "caption": "Gemma 4 extracts structured claims from images and audio",
           "source_sample_frames": 94208,
           "source_duration_seconds": 3.925333,
-          "scene_start_seconds": 0.35,
-          "scene_end_seconds": 4.275333,
-          "absolute_start_seconds": 24.35,
-          "absolute_end_seconds": 28.275333
+          "scene_start_seconds": 0.15,
+          "scene_end_seconds": 4.075333,
+          "absolute_start_seconds": 15.15,
+          "absolute_end_seconds": 19.075333
         },
         {
           "index": 2,
           "caption": "with verbatim evidence quotes.",
           "source_sample_frames": 46080,
           "source_duration_seconds": 1.92,
-          "scene_start_seconds": 4.415333,
-          "scene_end_seconds": 6.335333,
-          "absolute_start_seconds": 28.415333,
-          "absolute_end_seconds": 30.335333
+          "scene_start_seconds": 4.135333,
+          "scene_end_seconds": 6.055333,
+          "absolute_start_seconds": 19.135333,
+          "absolute_end_seconds": 21.055333
         },
         {
           "index": 3,
           "caption": "Recorded replay — not live inference.",
           "source_sample_frames": 57856,
           "source_duration_seconds": 2.410667,
-          "scene_start_seconds": 6.675333,
-          "scene_end_seconds": 9.086,
-          "absolute_start_seconds": 30.675333,
-          "absolute_end_seconds": 33.086
+          "scene_start_seconds": 6.115333,
+          "scene_end_seconds": 8.526,
+          "absolute_start_seconds": 21.115333,
+          "absolute_end_seconds": 23.526
         }
       ]
     },
     {
       "index": 4,
       "id": "conflicts",
-      "scene_duration_seconds": 20.0,
-      "scene_start_seconds": 44.0,
+      "scene_duration_seconds": 8.5,
+      "scene_start_seconds": 24.5,
       "cues": [
         {
           "index": 1,
           "caption": "Five contradictions detected.",
           "source_sample_frames": 49152,
           "source_duration_seconds": 2.048,
-          "scene_start_seconds": 0.35,
-          "scene_end_seconds": 2.398,
-          "absolute_start_seconds": 44.35,
-          "absolute_end_seconds": 46.398
+          "scene_start_seconds": 0.15,
+          "scene_end_seconds": 2.198,
+          "absolute_start_seconds": 24.65,
+          "absolute_end_seconds": 26.698
         },
         {
           "index": 2,
           "caption": "A hidden platform fee of one hundred fifty dollars",
           "source_sample_frames": 77824,
           "source_duration_seconds": 3.242667,
-          "scene_start_seconds": 2.738,
-          "scene_end_seconds": 5.980667,
-          "absolute_start_seconds": 46.738,
-          "absolute_end_seconds": 49.980667
+          "scene_start_seconds": 2.258,
+          "scene_end_seconds": 5.500667,
+          "absolute_start_seconds": 26.758,
+          "absolute_end_seconds": 30.000667
         },
         {
           "index": 3,
           "caption": "never appeared in the marketing.",
           "source_sample_frames": 39936,
           "source_duration_seconds": 1.664,
-          "scene_start_seconds": 6.270667,
-          "scene_end_seconds": 7.934667,
-          "absolute_start_seconds": 50.270667,
-          "absolute_end_seconds": 51.934667
+          "scene_start_seconds": 5.560667,
+          "scene_end_seconds": 7.224667,
+          "absolute_start_seconds": 30.060667,
+          "absolute_end_seconds": 31.724667
         }
       ]
     },
     {
       "index": 5,
       "id": "evidence-detail",
-      "scene_duration_seconds": 13.0,
-      "scene_start_seconds": 64.0,
+      "scene_duration_seconds": 9.5,
+      "scene_start_seconds": 33.0,
       "cues": [
         {
           "index": 1,
           "caption": "Each conflict cites quoted evidence.",
           "source_sample_frames": 55296,
           "source_duration_seconds": 2.304,
-          "scene_start_seconds": 0.35,
-          "scene_end_seconds": 2.654,
-          "absolute_start_seconds": 64.35,
-          "absolute_end_seconds": 66.654
+          "scene_start_seconds": 0.15,
+          "scene_end_seconds": 2.454,
+          "absolute_start_seconds": 33.15,
+          "absolute_end_seconds": 35.454
         },
         {
           "index": 2,
           "caption": "Promised no hidden fees — contract shows one hundred fifty dollars. Status: contradicted.",
           "source_sample_frames": 143360,
           "source_duration_seconds": 5.973333,
-          "scene_start_seconds": 2.794,
-          "scene_end_seconds": 8.767333,
-          "absolute_start_seconds": 66.794,
-          "absolute_end_seconds": 72.767333
+          "scene_start_seconds": 2.514,
+          "scene_end_seconds": 8.487333,
+          "absolute_start_seconds": 35.514,
+          "absolute_end_seconds": 41.487333
         }
       ]
     },
     {
       "index": 6,
       "id": "questions",
-      "scene_duration_seconds": 8.0,
-      "scene_start_seconds": 77.0,
+      "scene_duration_seconds": 5.0,
+      "scene_start_seconds": 42.5,
       "cues": [
         {
           "index": 1,
           "caption": "EchoClause generates clarification questions",
           "source_sample_frames": 76288,
           "source_duration_seconds": 3.178667,
-          "scene_start_seconds": 0.35,
-          "scene_end_seconds": 3.528667,
-          "absolute_start_seconds": 77.35,
-          "absolute_end_seconds": 80.528667
+          "scene_start_seconds": 0.15,
+          "scene_end_seconds": 3.328667,
+          "absolute_start_seconds": 42.65,
+          "absolute_end_seconds": 45.828667
         },
         {
           "index": 2,
           "caption": "before you sign.",
           "source_sample_frames": 29696,
           "source_duration_seconds": 1.237333,
-          "scene_start_seconds": 3.668667,
-          "scene_end_seconds": 4.906,
-          "absolute_start_seconds": 80.668667,
-          "absolute_end_seconds": 81.906
+          "scene_start_seconds": 3.388667,
+          "scene_end_seconds": 4.626,
+          "absolute_start_seconds": 45.888667,
+          "absolute_end_seconds": 47.126
         }
       ]
     },
     {
       "index": 7,
       "id": "tagline",
-      "scene_duration_seconds": 5.0,
-      "scene_start_seconds": 85.0,
+      "scene_duration_seconds": 4.5,
+      "scene_start_seconds": 47.5,
       "cues": [
         {
           "index": 1,
           "caption": "EchoClause.",
           "source_sample_frames": 28672,
           "source_duration_seconds": 1.194667,
-          "scene_start_seconds": 0.35,
-          "scene_end_seconds": 1.544667,
-          "absolute_start_seconds": 85.35,
-          "absolute_end_seconds": 86.544667
+          "scene_start_seconds": 0.15,
+          "scene_end_seconds": 1.344667,
+          "absolute_start_seconds": 47.65,
+          "absolute_end_seconds": 48.844667
         },
         {
           "index": 2,
           "caption": "What they said versus what you sign.",
           "source_sample_frames": 48128,
           "source_duration_seconds": 2.005333,
-          "scene_start_seconds": 1.834667,
-          "scene_end_seconds": 3.84,
-          "absolute_start_seconds": 86.834667,
-          "absolute_end_seconds": 88.84
+          "scene_start_seconds": 1.404667,
+          "scene_end_seconds": 3.41,
+          "absolute_start_seconds": 48.904667,
+          "absolute_end_seconds": 50.91
         }
       ]
     }
