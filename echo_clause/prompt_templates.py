@@ -14,7 +14,7 @@ Return ONLY valid JSON matching this schema:
       "field": "principal|interest_rate|platform_fee|processing_fee|total_repayment|repayment_term_days|late_fee|late_fee_frequency|automatic_debit|automatic_renewal|cancellation_fee|prepayment_penalty",
       "raw_value": "exact text from evidence",
       "normalized_value": null,
-      "currency": "NGN or null",
+      "currency": "USD or null",
       "unit": null,
       "frequency": null,
       "polarity": "positive|negative|neutral",
@@ -44,8 +44,8 @@ AUDIO_EXTRACTION_USER = (
 
 FUNCTION_CALL_DEMO_USER = (
     "The advertisement promises no hidden fees but the contract shows a platform fee of "
-    "₦15,000 on ₦100,000 principal. Call calculate_fee_percentage with fee_amount=15000 "
-    "and principal=100000 to compute the hidden fee percentage."
+    "$150 on $1,000 principal. Call calculate_fee_percentage with fee_amount=150 "
+    "and principal=1000 to compute the hidden fee percentage."
 )
 
 
