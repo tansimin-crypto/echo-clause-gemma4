@@ -364,7 +364,7 @@ class GemmaRuntime:
             demo_trace = execute_tool_call(
                 {
                     "name": "calculate_fee_percentage",
-                    "arguments": {"fee_amount": 15000, "principal": 100000},
+                    "arguments": {"fee_amount": 150, "principal": 1000},
                 }
             )
             artifact["deterministic_tool_validation"] = {
