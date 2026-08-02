@@ -7,7 +7,15 @@ from typing import Any
 
 from echo_clause.schemas import ClaimField, NormalizeFinancialTermArgs
 
-_CURRENCY_SYMBOLS = {"₦": "NGN", "ngn": "NGN", "naira": "NGN"}
+_CURRENCY_SYMBOLS = {
+    "$": "USD",
+    "usd": "USD",
+    "dollar": "USD",
+    "dollars": "USD",
+    "₦": "NGN",
+    "ngn": "NGN",
+    "naira": "NGN",
+}
 _NUMBER_WORDS = {
     "zero": 0,
     "one": 1,
@@ -36,9 +44,9 @@ def _parse_amount(text: str) -> tuple[float | None, str | None]:
         return float(match.group().replace(",", "")), currency
 
     if "no hidden fees" in lowered or "no processing charges" in lowered:
-        return 0.0, currency or "NGN"
+        return 0.0, currency or "USD"
     if "0%" in text:
-        return 0.0, currency or "NGN"
+        return 0.0, currency or "USD"
 
     return None, currency
 
@@ -76,7 +84,7 @@ def normalize_financial_term(args: NormalizeFinancialTermArgs) -> dict[str, Any]
     """Normalize a raw financial term to structured values."""
     text = args.raw_text
     field = args.field
-    currency = args.currency_hint or "NGN"
+    currency = args.currency_hint or "USD"
 
     result: dict[str, Any] = {
         "field": field.value,
