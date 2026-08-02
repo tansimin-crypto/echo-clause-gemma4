@@ -1,0 +1,1203 @@
+{
+  "case_count": 24,
+  "mode": "recorded_replay",
+  "aggregate": {
+    "echo_clause": {
+      "correct": 27,
+      "total": 28,
+      "accuracy": 0.964
+    },
+    "contract_only": {
+      "correct": 3,
+      "total": 28,
+      "accuracy": 0.107
+    },
+    "text_concat": {
+      "correct": 23,
+      "total": 28,
+      "accuracy": 0.821
+    }
+  },
+  "cases": [
+    {
+      "case_id": "nuru_full_demo",
+      "family": "demo",
+      "expected": {
+        "platform_fee": "CONTRADICTED"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "platform_fee",
+            "status": "CONTRADICTED",
+            "severity": "high"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "platform_fee",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "high"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "platform_fee",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "nuru_total_repayment",
+      "family": "demo",
+      "expected": {
+        "total_repayment": "CONTRADICTED"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "total_repayment",
+            "status": "CONTRADICTED",
+            "severity": "critical"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "total_repayment",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "critical"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "total_repayment",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "nuru_late_fee",
+      "family": "demo",
+      "expected": {
+        "late_fee": "CONTRADICTED"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "late_fee",
+            "status": "CONTRADICTED",
+            "severity": "high"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "late_fee",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "high"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "late_fee",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "nuru_term_days",
+      "family": "demo",
+      "expected": {
+        "repayment_term_days": "CONTRADICTED"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "repayment_term_days",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "repayment_term_days",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "repayment_term_days",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "nuru_auto_debit",
+      "family": "demo",
+      "expected": {
+        "automatic_debit": "CONTRADICTED"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "automatic_debit",
+            "status": "CONTRADICTED",
+            "severity": "high"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "automatic_debit",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "high"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "automatic_debit",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "syn_interest_match",
+      "family": "synthetic",
+      "expected": {
+        "interest_rate": "SUPPORTED"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "interest_rate",
+            "status": "SUPPORTED",
+            "severity": "medium"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "interest_rate",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "interest_rate",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "syn_principal_match",
+      "family": "synthetic",
+      "expected": {
+        "principal": "SUPPORTED"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "principal",
+            "status": "SUPPORTED",
+            "severity": "medium"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "principal",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "principal",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "syn_hidden_prepayment",
+      "family": "synthetic",
+      "expected": {
+        "prepayment_penalty": "HIDDEN_IN_CONTRACT"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "text_concat": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "prepayment_penalty",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "prepayment_penalty",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "prepayment_penalty",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "syn_missing_late_fee",
+      "family": "synthetic",
+      "expected": {
+        "late_fee": "MISSING_EVIDENCE"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "late_fee",
+            "status": "MISSING_EVIDENCE",
+            "severity": "high"
+          }
+        ],
+        "contract_only": [],
+        "text_concat": [
+          {
+            "canonical_field": "late_fee",
+            "status": "MISSING_EVIDENCE",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "syn_processing_fee_mismatch",
+      "family": "synthetic",
+      "expected": {
+        "processing_fee": "CONTRADICTED"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "processing_fee",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "processing_fee",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "processing_fee",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "syn_cancellation_hidden",
+      "family": "synthetic",
+      "expected": {
+        "cancellation_fee": "HIDDEN_IN_CONTRACT"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "text_concat": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "cancellation_fee",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "cancellation_fee",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "cancellation_fee",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "syn_auto_renewal_contradict",
+      "family": "synthetic",
+      "expected": {
+        "automatic_renewal": "CONTRADICTED"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "automatic_renewal",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "automatic_renewal",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "automatic_renewal",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "syn_multi_field_1",
+      "family": "synthetic",
+      "expected": {
+        "platform_fee": "CONTRADICTED",
+        "interest_rate": "SUPPORTED"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 2,
+          "total": 2,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 2,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 2,
+          "total": 2,
+          "accuracy": 1.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "interest_rate",
+            "status": "SUPPORTED",
+            "severity": "medium"
+          },
+          {
+            "canonical_field": "platform_fee",
+            "status": "CONTRADICTED",
+            "severity": "high"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "interest_rate",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          },
+          {
+            "canonical_field": "platform_fee",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "high"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "interest_rate",
+            "status": "SUPPORTED",
+            "severity": "medium"
+          },
+          {
+            "canonical_field": "platform_fee",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "syn_multi_field_2",
+      "family": "synthetic",
+      "expected": {
+        "total_repayment": "CONTRADICTED",
+        "repayment_term_days": "CONTRADICTED"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 2,
+          "total": 2,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 2,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 2,
+          "total": 2,
+          "accuracy": 1.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "repayment_term_days",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          },
+          {
+            "canonical_field": "total_repayment",
+            "status": "CONTRADICTED",
+            "severity": "critical"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "repayment_term_days",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          },
+          {
+            "canonical_field": "total_repayment",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "critical"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "repayment_term_days",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          },
+          {
+            "canonical_field": "total_repayment",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "syn_late_fee_freq",
+      "family": "synthetic",
+      "expected": {
+        "late_fee_frequency": "CONTRADICTED"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "late_fee_frequency",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "late_fee_frequency",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "late_fee_frequency",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "syn_principal_high",
+      "family": "synthetic",
+      "expected": {
+        "principal": "CONTRADICTED"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "principal",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "principal",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "principal",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "syn_debit_supported",
+      "family": "synthetic",
+      "expected": {
+        "automatic_debit": "SUPPORTED"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "automatic_debit",
+            "status": "CONTRADICTED",
+            "severity": "high"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "automatic_debit",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "high"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "automatic_debit",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "syn_platform_supported",
+      "family": "synthetic",
+      "expected": {
+        "platform_fee": "SUPPORTED"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "platform_fee",
+            "status": "SUPPORTED",
+            "severity": "high"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "platform_fee",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "high"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "platform_fee",
+            "status": "SUPPORTED",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "syn_term_supported",
+      "family": "synthetic",
+      "expected": {
+        "repayment_term_days": "SUPPORTED"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "repayment_term_days",
+            "status": "SUPPORTED",
+            "severity": "medium"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "repayment_term_days",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "repayment_term_days",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "syn_total_missing",
+      "family": "synthetic",
+      "expected": {
+        "total_repayment": "MISSING_EVIDENCE"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "total_repayment",
+            "status": "MISSING_EVIDENCE",
+            "severity": "critical"
+          }
+        ],
+        "contract_only": [],
+        "text_concat": [
+          {
+            "canonical_field": "total_repayment",
+            "status": "MISSING_EVIDENCE",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "syn_interest_contradict",
+      "family": "synthetic",
+      "expected": {
+        "interest_rate": "CONTRADICTED"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "interest_rate",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "interest_rate",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "interest_rate",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "syn_late_supported",
+      "family": "synthetic",
+      "expected": {
+        "late_fee": "SUPPORTED"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 0,
+          "total": 1,
+          "accuracy": 0.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "late_fee",
+            "status": "SUPPORTED",
+            "severity": "high"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "late_fee",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "high"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "late_fee",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "syn_hidden_auto_renewal",
+      "family": "synthetic",
+      "expected": {
+        "automatic_renewal": "HIDDEN_IN_CONTRACT"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        },
+        "text_concat": {
+          "correct": 1,
+          "total": 1,
+          "accuracy": 1.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "automatic_renewal",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "automatic_renewal",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "automatic_renewal",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "syn_triple_field",
+      "family": "synthetic",
+      "expected": {
+        "principal": "SUPPORTED",
+        "processing_fee": "CONTRADICTED",
+        "automatic_debit": "CONTRADICTED"
+      },
+      "scores": {
+        "echo_clause": {
+          "correct": 3,
+          "total": 3,
+          "accuracy": 1.0
+        },
+        "contract_only": {
+          "correct": 0,
+          "total": 3,
+          "accuracy": 0.0
+        },
+        "text_concat": {
+          "correct": 3,
+          "total": 3,
+          "accuracy": 1.0
+        }
+      },
+      "methods": {
+        "echo_clause": [
+          {
+            "canonical_field": "automatic_debit",
+            "status": "CONTRADICTED",
+            "severity": "high"
+          },
+          {
+            "canonical_field": "principal",
+            "status": "SUPPORTED",
+            "severity": "medium"
+          },
+          {
+            "canonical_field": "processing_fee",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ],
+        "contract_only": [
+          {
+            "canonical_field": "automatic_debit",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "high"
+          },
+          {
+            "canonical_field": "principal",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          },
+          {
+            "canonical_field": "processing_fee",
+            "status": "HIDDEN_IN_CONTRACT",
+            "severity": "medium"
+          }
+        ],
+        "text_concat": [
+          {
+            "canonical_field": "automatic_debit",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          },
+          {
+            "canonical_field": "principal",
+            "status": "SUPPORTED",
+            "severity": "medium"
+          },
+          {
+            "canonical_field": "processing_fee",
+            "status": "CONTRADICTED",
+            "severity": "medium"
+          }
+        ]
+      }
+    }
+  ]
+}
