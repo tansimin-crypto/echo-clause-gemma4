@@ -34,7 +34,7 @@ Last updated: 2026-08-02 (R0–R10 completion pass)
 | Source dataset | `simingtan/echo-clause-gemma4-src` |
 | Kaggle Models attached (no HF_TOKEN) | Yes |
 | `machine_shape` | `GpuT4x2` (CPU fallback if P100 assigned) |
-| Public notebook (`is_private: false`) | v8+ |
+| Notebook visibility | **Private** (`is_private: true`) — Kaggle auto-publicizes after competition ends; do **not** set public manually |
 
 ## Manual steps (user)
 
