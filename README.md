@@ -12,7 +12,18 @@ Borrowers sign loan contracts after seeing ads, hearing sales pitches, and chatt
 
 **Live demo:** [docs/index.html](docs/index.html) — interactive static replay with evidence gallery, claim cards, and expandable conflict matrix (GitHub Pages ready).
 
-**Demo case:** fictional **Nuru Credit** micro-loan — 5 contradictions across platform fee, total repayment, late fee, term days, and automatic debit.
+**Demo case:** fictional **Nuru Credit** US micro-loan ($1,000 principal) — 5 contradictions across platform fee, total repayment, late fee, term days, and automatic debit.
+
+## What the demo actually shows (multimodal honesty)
+
+| Capability | Designed | Live verified in repo | Shown in demo / video / pages |
+|------------|----------|----------------------|------------------------------|
+| Image OCR / claim extraction | Yes — `extract_claims_from_image` | **No** — R1 spike artifacts are `NOT_RUN_GPU` (P100 sm_60 / load failures); no `"status": "PASSED"` artifact | Static replay + video use **recorded** claims; notebook runs live path when GPU load succeeds |
+| Native audio extraction | Yes — `extract_claims_from_audio` | **No** — same spike blockers; synthetic tone WAV may not yield rich audio claims | Sales pitch claims come from `recorded_claims.json` or ASR transcript fallback |
+| Function calling | Yes — allowlisted tools + `run_function_call_demo` | **Partial** — deterministic tool validation passes without model; live FC unverified locally | Writeup/notebook describe FC; demo reconciliation uses deterministic calculators |
+| Recorded replay | Yes — `recorded_claims.json` | **Yes** — pytest + GitHub Pages + video | Labeled *"Interactive replay generated from a recorded Gemma 4 run"* |
+
+Live Gemma multimodal inference is implemented in code and exercised on Kaggle T4 when model mount + GPU succeed. Public demo surfaces use **frozen recorded output**, not fabricated live generations.
 
 ![EchoClause demo preview](docs/artifacts/og-preview.svg)
 
