@@ -240,6 +240,7 @@ class GemmaRuntime:
         self,
         assets_dir: Path,
         not_run_gpu: bool = False,
+        skipped_load: bool = False,
     ) -> Path:
         """Run R1 validation spike and write provenance artifact."""
         ad_path = assets_dir / "advertisement.png"
@@ -271,9 +272,31 @@ class GemmaRuntime:
 
         if not_run_gpu or self.model is None:
             artifact["status"] = "NOT_RUN_GPU"
+            blockers: list[str] = []
+            if not get_gpu_info().get("available"):
+                blockers.append("No CUDA GPU detected locally")
+            if self.load_attempts:
+                blockers.append("Model load failed — see load_attempts")
+            elif skipped_load:
+                blockers.append("Skipped model load (--not-run-gpu)")
+            else:
+                blockers.append("Model load failed — see load_attempts")
+            artifact["blockers"] = blockers
+            # Validate deterministic tool-calling path without model (not a fake model output)
+            demo_trace = execute_tool_call(
+                {
+                    "name": "calculate_fee_percentage",
+                    "arguments": {"fee_amount": 15000, "principal": 100000},
+                }
+            )
+            artifact["deterministic_tool_validation"] = {
+                "description": "Host-side allowlist + Pydantic validation (no model)",
+                "passed": demo_trace.validation_ok,
+                "trace": demo_trace.model_dump(),
+            }
             artifact["kaggle_commands"] = [
                 "cd /kaggle/working/echo-clause-gemma4",
-                "pip install -e '.[dev]'",
+                "pip install -e '.[dev,gemma]'",
                 "python scripts/run_runtime_spike.py",
             ]
             return write_runtime_artifact(artifact)

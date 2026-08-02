@@ -27,18 +27,35 @@ def sha256_text(text: str) -> str:
 
 
 def get_git_sha(project_root: Path) -> str | None:
-    try:
-        result = subprocess.run(
-            ["git", "rev-parse", "HEAD"],
-            cwd=project_root,
-            capture_output=True,
-            text=True,
-            check=False,
-        )
-        if result.returncode == 0:
-            return result.stdout.strip()
-    except OSError:
-        pass
+    git_dir = project_root / ".git"
+    if git_dir.is_dir():
+        head = (git_dir / "HEAD").read_text(encoding="utf-8").strip()
+        if head.startswith("ref:"):
+            ref_path = git_dir / head.split(":", 1)[1].strip()
+            if ref_path.exists():
+                return ref_path.read_text(encoding="utf-8").strip()
+        elif len(head) == 40:
+            return head
+
+    git_candidates = [
+        "git",
+        r"C:\Program Files\Git\bin\git.exe",
+        r"D:\CodexData\cache\codex-runtimes\codex-primary-runtime\dependencies\native\git\cmd\git.exe",
+        "/usr/bin/git",
+    ]
+    for git_bin in git_candidates:
+        try:
+            result = subprocess.run(
+                [git_bin, "rev-parse", "HEAD"],
+                cwd=project_root,
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            if result.returncode == 0:
+                return result.stdout.strip()
+        except OSError:
+            continue
     return None
 
 

@@ -4,8 +4,22 @@
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 from pathlib import Path
+
+
+def _clear_proxy_env() -> None:
+    """Avoid broken local SOCKS/HTTP proxy blocking Hugging Face downloads."""
+    for key in (
+        "HTTP_PROXY",
+        "HTTPS_PROXY",
+        "ALL_PROXY",
+        "http_proxy",
+        "https_proxy",
+        "all_proxy",
+    ):
+        os.environ.pop(key, None)
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
@@ -16,6 +30,7 @@ from echo_clause.provenance import get_gpu_info  # noqa: E402
 
 
 def main() -> int:
+    _clear_proxy_env()
     parser = argparse.ArgumentParser(description="EchoClause R1 runtime spike")
     parser.add_argument(
         "--not-run-gpu",
@@ -34,7 +49,7 @@ def main() -> int:
             print("Model load failed after all attempts; writing partial artifact.")
             not_run = True
 
-    out = runtime.run_spike(ASSETS_DIR, not_run_gpu=not_run)
+    out = runtime.run_spike(ASSETS_DIR, not_run_gpu=not_run, skipped_load=args.not_run_gpu)
     print(f"Artifact written: {out}")
     print(f"GPU: {gpu}")
     print(f"Model: {runtime.model_id}")
