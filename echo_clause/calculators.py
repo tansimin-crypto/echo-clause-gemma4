@@ -55,8 +55,8 @@ def compare_normalized_terms(args: CompareNormalizedTermsArgs) -> dict[str, Any]
         if promise != contract:
             status = ComparisonStatus.CONTRADICTED
             if args.field == ClaimField.LATE_FEE:
-                # Flat NGN amount vs weekly percentage — not subtractable in NGN.
-                diff = f"₦{promise:,.0f} one-time vs {contract:g}% ({args.contract_evidence})"
+                # Flat currency amount vs weekly percentage — not subtractable.
+                diff = f"${promise:,.0f} one-time vs {contract:g}% ({args.contract_evidence})"
             else:
                 diff = f"{contract - promise:+.2f}"
     elif isinstance(promise, bool) and isinstance(contract, bool):
