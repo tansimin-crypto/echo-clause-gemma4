@@ -13,8 +13,8 @@
 | 0–9 s | `hook` | Ad vs contract side-by-side | Zero interest. No hidden fees. / Then you sign — and the contract tells a different story. |
 | 9–24 s | `evidence` | Four source thumbnails (ad, chat, contract, audio) | Four evidence sources for fictional lender Nuru Credit: / advertisement, sales pitch audio, support chat, and contract. |
 | 24–44 s | `extraction` | SourceClaim JSON + **RECORDED REPLAY** badge | Gemma 4 extracts structured claims… / with verbatim evidence quotes. / Recorded replay — not live inference. |
-| 44–64 s | `conflicts` | Five-row contradiction table + hidden-fee callout | Five contradictions detected. / A hidden platform fee of fifteen thousand naira / never appeared in the marketing. |
-| 64–77 s | `evidence-detail` | Promise vs contract evidence panels | Each conflict cites quoted evidence. / Promised no hidden fees — contract shows fifteen thousand naira. Status: contradicted. |
+| 44–64 s | `conflicts` | Five-row contradiction table + hidden-fee callout | Five contradictions detected. / A hidden platform fee of one hundred fifty dollars / never appeared in the marketing. |
+| 64–77 s | `evidence-detail` | Promise vs contract evidence panels | Each conflict cites quoted evidence. / Promised no hidden fees — contract shows one hundred fifty dollars. Status: contradicted. |
 | 77–85 s | `questions` | Clarification question list | EchoClause generates clarification questions / before you sign. |
 | 85–90 s | `tagline` | Branded closing slide | EchoClause. / What they said versus what you sign. |
 
