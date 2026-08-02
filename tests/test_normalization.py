@@ -4,12 +4,12 @@ from echo_clause.normalization import normalize_financial_term
 from echo_clause.schemas import ClaimField, NormalizeFinancialTermArgs
 
 
-def test_normalize_naira_amount():
+def test_normalize_usd_amount():
     result = normalize_financial_term(
-        NormalizeFinancialTermArgs(raw_text="₦100,000", field=ClaimField.PRINCIPAL)
+        NormalizeFinancialTermArgs(raw_text="$1,000", field=ClaimField.PRINCIPAL)
     )
-    assert result["normalized_value"] == 100000.0
-    assert result["currency"] == "NGN"
+    assert result["normalized_value"] == 1000.0
+    assert result["currency"] == "USD"
 
 
 def test_normalize_zero_interest():
@@ -48,16 +48,16 @@ def test_normalize_late_fee_percent():
     assert result["currency"] is None
 
 
-def test_normalize_late_fee_flat_naira():
+def test_normalize_late_fee_flat_usd():
     result = normalize_financial_term(
         NormalizeFinancialTermArgs(
-            raw_text="Late payment is only a one-time ₦2,000 fee",
+            raw_text="Late payment is only a one-time $20 fee",
             field=ClaimField.LATE_FEE,
         )
     )
-    assert result["normalized_value"] == 2000.0
+    assert result["normalized_value"] == 20.0
     assert result["unit"] == "currency"
-    assert result["currency"] == "NGN"
+    assert result["currency"] == "USD"
     assert result["frequency"] == "one_time"
 
 
