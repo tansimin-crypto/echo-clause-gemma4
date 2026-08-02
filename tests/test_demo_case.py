@@ -70,6 +70,6 @@ def test_demo_assets_exist():
 
 def test_sales_pitch_transcript_content():
     text = (ASSETS_DIR / "sales_pitch.txt").read_text(encoding="utf-8")
-    assert "₦100,000" in text
+    assert "$1,000" in text
     assert "no processing charges" in text.lower()
-    assert "₦2,000" in text
+    assert "$20" in text
