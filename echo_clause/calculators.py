@@ -7,6 +7,7 @@ from typing import Any
 from echo_clause.schemas import (
     CalculateFeePercentageArgs,
     CalculateTotalRepaymentArgs,
+    ClaimField,
     CompareNormalizedTermsArgs,
     ComparisonStatus,
     GenerateClarificationQuestionsArgs,
@@ -53,7 +54,11 @@ def compare_normalized_terms(args: CompareNormalizedTermsArgs) -> dict[str, Any]
     if isinstance(promise, (int, float)) and isinstance(contract, (int, float)):
         if promise != contract:
             status = ComparisonStatus.CONTRADICTED
-            diff = f"{contract - promise:+.2f}"
+            if args.field == ClaimField.LATE_FEE:
+                # Flat NGN amount vs weekly percentage — not subtractable in NGN.
+                diff = f"₦{promise:,.0f} one-time vs {contract:g}% ({args.contract_evidence})"
+            else:
+                diff = f"{contract - promise:+.2f}"
     elif isinstance(promise, bool) and isinstance(contract, bool):
         if promise != contract:
             status = ComparisonStatus.CONTRADICTED
