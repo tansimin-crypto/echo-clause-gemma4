@@ -74,7 +74,13 @@ def get_package_versions() -> dict[str, str]:
 
 
 def get_gpu_info() -> dict[str, Any]:
-    info: dict[str, Any] = {"available": False, "device_name": None, "vram_gb": None}
+    info: dict[str, Any] = {
+        "available": False,
+        "device_name": None,
+        "vram_gb": None,
+        "compute_capability": None,
+        "cuda_usable": False,
+    }
     try:
         import torch
 
@@ -83,6 +89,17 @@ def get_gpu_info() -> dict[str, Any]:
             info["device_name"] = torch.cuda.get_device_name(0)
             props = torch.cuda.get_device_properties(0)
             info["vram_gb"] = round(props.total_memory / (1024**3), 2)
+            major, minor = torch.cuda.get_device_capability(0)
+            info["compute_capability"] = f"{major}.{minor}"
+            info["cuda_usable"] = major >= 7
+            if info["cuda_usable"]:
+                try:
+                    probe = torch.zeros(1, device="cuda")
+                    del probe
+                    torch.cuda.synchronize()
+                except Exception as exc:
+                    info["cuda_usable"] = False
+                    info["cuda_probe_error"] = str(exc)
     except ImportError:
         info["error"] = "torch not installed"
     return info

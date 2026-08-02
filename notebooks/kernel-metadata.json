@@ -1,15 +1,21 @@
 {
-  "id": "mayn/echo-clause-gemma4-demo",
-  "title": "EchoClause Gemma 4 Demo",
+  "id": "simingtan/echo-clause-gemma4-demo",
+  "title": "echo-clause-gemma4-demo",
   "code_file": "echo_clause_kaggle_demo.ipynb",
   "language": "python",
   "kernel_type": "notebook",
-  "is_private": true,
+  "is_private": false,
   "enable_gpu": true,
   "enable_internet": true,
+  "enable_tpu": false,
   "machine_shape": "GpuT4x2",
-  "dataset_sources": [],
+  "dataset_sources": ["simingtan/echo-clause-gemma4-src"],
   "kernel_sources": [],
   "competition_sources": [],
-  "model_sources": []
+  "model_sources": [
+    "google/gemma-4/transformers/gemma-4-e4b-it-qat-q4_0-unquantized/2",
+    "google/gemma-4/transformers/gemma-4-e2b-it-qat-q4_0-unquantized/2",
+    "google/gemma-4/transformers/gemma-4-e4b-it/1",
+    "google/gemma-4/transformers/gemma-4-e2b-it/1"
+  ]
 }

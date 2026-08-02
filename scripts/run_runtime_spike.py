@@ -24,9 +24,9 @@ def _clear_proxy_env() -> None:
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from echo_clause.config import ASSETS_DIR  # noqa: E402
-from echo_clause.gemma_runtime import GemmaRuntime  # noqa: E402
-from echo_clause.provenance import get_gpu_info  # noqa: E402
+from echo_clause.config import ASSETS_DIR
+from echo_clause.gemma_runtime import GemmaRuntime
+from echo_clause.provenance import get_gpu_info
 
 
 def main() -> int:
@@ -44,7 +44,19 @@ def main() -> int:
     not_run = args.not_run_gpu
 
     if not not_run:
-        loaded = runtime.load()
+        try:
+            loaded = runtime.load()
+        except Exception as exc:
+            print(f"Model load crashed: {exc}")
+            runtime.load_attempts.append(
+                type("LoadAttempt", (), {
+                    "model_id": runtime.model_id,
+                    "config": {"label": "crash"},
+                    "success": False,
+                    "error": str(exc),
+                })()
+            )
+            loaded = False
         if not loaded:
             print("Model load failed after all attempts; writing partial artifact.")
             not_run = True

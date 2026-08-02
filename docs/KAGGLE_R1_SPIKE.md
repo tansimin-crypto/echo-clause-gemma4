@@ -1,47 +1,45 @@
 # Finish R1 on Kaggle T4
 
-Local R0 is complete; R1 code is on disk but **live Gemma inference was not run** (no CUDA GPU, Hugging Face unreachable from this machine).
+## One-time setup (no HF_TOKEN required on Kaggle)
 
-## Prerequisites
+1. Open [kaggle.com/models/google/gemma-4](https://www.kaggle.com/models/google/gemma-4)
+2. Click **Request Access** / accept the Gemma license (once per Kaggle account)
+3. Run the notebook — `kernel-metadata.json` attaches official model sources:
 
-1. Accept Gemma 4 license on Hugging Face for `google/gemma-4-E4B-it` and `google/gemma-4-E2B-it`.
-2. Kaggle account with **Secrets** → add `HF_TOKEN` (read token).
-3. Notebook or script session with **GPU T4 x2** (or T4 x1) enabled.
+```json
+"model_sources": [
+  "google/gemma-4/transformers/gemma-4-e4b-it-qat-q4_0-unquantized/2",
+  "google/gemma-4/transformers/gemma-4-e2b-it-qat-q4_0-unquantized/2"
+]
+```
 
-## Run spike
+Weights mount at `/kaggle/input/models/google/gemma-4/transformers/...` — no Hugging Face download.
+
+## Optional: Hugging Face fallback (local dev)
+
+Accept Gemma 4 license on Hugging Face and set `HF_TOKEN` only if **not** using Kaggle Models.
+
+## Push and run
 
 ```bash
-cd /kaggle/working/echo-clause-gemma4
-pip install -e ".[dev,gemma]"
-export HF_TOKEN="$HF_TOKEN"   # Kaggle secret injects this automatically in notebooks
-python scripts/run_runtime_spike.py
-python -m pytest -q
+python scripts/kaggle_dataset_push.py   # updates source dataset
+python scripts/kaggle_push.py           # pushes notebook + model_sources
 ```
+
+Monitor: `kaggle kernels status simingtan/echo-clause-gemma4-demo`
 
 ## Pass criteria (R1)
 
-- [ ] At least one **image** → parseable structured claim
-- [ ] At least one **audio** → parseable claim (or documented ASR fallback)
-- [ ] At least one **function call** → Pydantic-validated tool execution
-- [ ] Artifact written to `artifacts/runs/runtime_spike_*.json` with raw model output
+- Image → parseable structured claim
+- Audio → parseable claim (or documented ASR fallback)
+- Function call → Pydantic-validated tool execution
+- `artifacts/runs/runtime_spike_*.json` with raw model output
 
-## Model fallback rule
+## Model fallback
 
-1. Try E4B `bf16_auto` (attempt 1)
-2. Try E4B `bnb_4bit` (attempt 2)
-3. If both fail on T4 VRAM → freeze **E2B** as public Notebook model; note in artifact
+1. E4B QAT (Kaggle mount) or bf16 on **T4 / sm_70+**
+2. E4B bnb_4bit (T4 sm_70+ only)
+3. E2B QAT or bf16 on GPU
+4. **E2B on CPU** when Kaggle assigns P100 (sm_60) or torch cu128 has no kernel for device
 
-Do **not** retry E4B more than twice.
-
-## After success
-
-Commit from a machine with Git:
-
-```powershell
-cd D:\kaggle\gemma-finance
-git checkout feat/r0-r1-runtime-spike
-git add echo-clause-gemma4/
-git commit -m "feat: validate Gemma 4 multimodal and function-calling runtime"
-```
-
-Replace `artifacts/runs/runtime_spike_*.json` with the **successful** Kaggle run artifact before committing.
+Max 2 E4B GPU attempts, then E2B; CPU fallback is spike-only and sets `cpu_verified: true` in the artifact.

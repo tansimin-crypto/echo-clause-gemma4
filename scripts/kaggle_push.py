@@ -39,14 +39,44 @@ def stage_bundle() -> Path:
     return STAGE
 
 
+def _find_kaggle_exe() -> str:
+    import shutil
+
+    found = shutil.which("kaggle")
+    if found:
+        return found
+    candidates = [
+        Path.home() / "Documents" / "simil" / ".tools" / "python" / "Scripts" / "kaggle.exe",
+    ]
+    for path in candidates:
+        if path.is_file():
+            return str(path)
+    return "kaggle"
+
+
+def _kaggle_authenticated() -> bool:
+    creds = Path.home() / ".kaggle" / "kaggle.json"
+    if creds.exists():
+        return True
+    try:
+        result = subprocess.run(
+            [_find_kaggle_exe(), "config", "view"],
+            capture_output=True,
+            text=True,
+            timeout=30,
+        )
+        return result.returncode == 0 and "username:" in result.stdout
+    except (OSError, subprocess.TimeoutExpired):
+        return False
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Stage and push Kaggle kernel")
     parser.add_argument("--stage-only", action="store_true")
     args = parser.parse_args()
 
-    creds = Path.home() / ".kaggle" / "kaggle.json"
-    if not creds.exists() and not args.stage_only:
-        print("BLOCKER: ~/.kaggle/kaggle.json not found. Run with --stage-only to prepare bundle.")
+    if not args.stage_only and not _kaggle_authenticated():
+        print("BLOCKER: Kaggle CLI not authenticated. Run with --stage-only to prepare bundle.")
         return 1
 
     bundle = stage_bundle()
@@ -55,10 +85,13 @@ def main() -> int:
     if args.stage_only:
         return 0
 
+    kaggle_exe = _find_kaggle_exe()
     result = subprocess.run(
-        ["kaggle", "kernels", "push", "-p", str(bundle)],
+        [kaggle_exe, "kernels", "push", "-p", str(bundle)],
         capture_output=True,
         text=True,
+        encoding="utf-8",
+        errors="replace",
     )
     print(result.stdout)
     if result.returncode != 0:
