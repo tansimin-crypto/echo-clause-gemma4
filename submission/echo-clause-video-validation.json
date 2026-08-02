@@ -4,7 +4,7 @@
   "actual_duration_seconds": 90.0,
   "within_tolerance": true,
   "video": "D:\\kaggle\\gemma-finance\\echo-clause-gemma4\\submission\\echo-clause-demo-90s.mp4",
-  "video_sha256": "8f3b40af16da88fa80377cc1dc69b8ae9337c83253c5f85f40fe82900b28879b",
+  "video_sha256": "b859cb78bb9515ff481c58e346472093fa6972ff616454d95adf1dee23704eb7",
   "srt": "D:\\kaggle\\gemma-finance\\echo-clause-gemma4\\submission\\echo-clause-demo-90s.srt",
   "vtt": "D:\\kaggle\\gemma-finance\\echo-clause-gemma4\\submission\\echo-clause-demo-90s.vtt",
   "bib_tooling": "D:\\CodexWorkspaces\\bib",
