@@ -35,6 +35,32 @@ def test_normalize_late_fee_frequency():
     assert result["normalized_value"] == "weekly"
 
 
+def test_normalize_late_fee_percent():
+    result = normalize_financial_term(
+        NormalizeFinancialTermArgs(
+            raw_text="Late fee: 5% of outstanding balance per week",
+            field=ClaimField.LATE_FEE,
+        )
+    )
+    assert result["normalized_value"] == 5.0
+    assert result["unit"] == "percent"
+    assert result["frequency"] == "weekly"
+    assert result["currency"] is None
+
+
+def test_normalize_late_fee_flat_naira():
+    result = normalize_financial_term(
+        NormalizeFinancialTermArgs(
+            raw_text="Late payment is only a one-time ₦2,000 fee",
+            field=ClaimField.LATE_FEE,
+        )
+    )
+    assert result["normalized_value"] == 2000.0
+    assert result["unit"] == "currency"
+    assert result["currency"] == "NGN"
+    assert result["frequency"] == "one_time"
+
+
 def test_normalize_automatic_debit_false():
     result = normalize_financial_term(
         NormalizeFinancialTermArgs(
