@@ -7,7 +7,6 @@ from typing import Any
 
 from echo_clause.schemas import ClaimField, NormalizeFinancialTermArgs
 
-
 _CURRENCY_SYMBOLS = {"₦": "NGN", "ngn": "NGN", "naira": "NGN"}
 _NUMBER_WORDS = {
     "zero": 0,

@@ -20,7 +20,7 @@ ui = [
 ]
 gemma = [
     "torch>=2.2",
-    "transformers>=4.50",
+    "transformers>=5.14",
     "accelerate>=0.30",
     "bitsandbytes>=0.43",
     "sentencepiece>=0.2",
@@ -45,3 +45,13 @@ pythonpath = ["."]
 [tool.ruff]
 line-length = 100
 target-version = "py310"
+exclude = [
+    "artifacts",
+    "notebooks/_kaggle_bundle",
+    "notebooks/_kaggle_dataset",
+    ".pytest_cache",
+    "*.egg-info",
+]
+
+[tool.ruff.lint]
+ignore = ["BLE001", "PLW1510", "SIM103"]

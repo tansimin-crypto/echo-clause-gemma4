@@ -1,6 +1,5 @@
 """Tool registry tests (R0)."""
 
-import pytest
 
 from echo_clause.schemas import ClaimField
 from echo_clause.tool_registry import ALLOWLIST, execute_tool_call, get_tool_definitions

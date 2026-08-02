@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from echo_clause.config import ASSETS_DIR, ARTIFACTS_DIR, DISCLAIMER
+from echo_clause.config import ASSETS_DIR, DISCLAIMER
 from echo_clause.gemma_runtime import GemmaRuntime
 from echo_clause.normalization import normalize_financial_term
 from echo_clause.provenance import write_runtime_artifact

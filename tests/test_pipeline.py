@@ -2,8 +2,6 @@
 
 import json
 
-import pytest
-
 from echo_clause.config import ASSETS_DIR
 from echo_clause.pipeline import run_pipeline
 from echo_clause.schemas import ComparisonStatus, DemoGold

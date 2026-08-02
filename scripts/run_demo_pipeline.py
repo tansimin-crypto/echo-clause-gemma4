@@ -18,9 +18,8 @@ def _clear_proxy_env() -> None:
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from echo_clause.config import ASSETS_DIR  # noqa: E402
-from echo_clause.gemma_runtime import GemmaRuntime  # noqa: E402
-from echo_clause.pipeline import run_pipeline, write_pipeline_artifact  # noqa: E402
+from echo_clause.gemma_runtime import GemmaRuntime
+from echo_clause.pipeline import run_pipeline, write_pipeline_artifact
 
 
 def main() -> int:

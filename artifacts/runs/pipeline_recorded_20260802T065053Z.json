@@ -1,0 +1,479 @@
+{
+  "conflict_count": 5,
+  "claims": [
+    {
+      "claim_id": "ad_principal",
+      "source_id": "advertisement",
+      "source_type": "advertisement",
+      "field": "principal",
+      "raw_value": "Borrow \u20a6100,000 today",
+      "normalized_value": 100000.0,
+      "currency": "NGN",
+      "unit": "currency",
+      "frequency": null,
+      "polarity": "neutral",
+      "evidence_text": "Borrow \u20a6100,000 today",
+      "page_number": null,
+      "timestamp_start": null,
+      "timestamp_end": null,
+      "confidence": 0.95,
+      "explicitness": "explicit",
+      "needs_review": false
+    },
+    {
+      "claim_id": "ad_interest",
+      "source_id": "advertisement",
+      "source_type": "advertisement",
+      "field": "interest_rate",
+      "raw_value": "0% interest",
+      "normalized_value": 0.0,
+      "currency": "NGN",
+      "unit": "percent",
+      "frequency": null,
+      "polarity": "neutral",
+      "evidence_text": "0% interest",
+      "page_number": null,
+      "timestamp_start": null,
+      "timestamp_end": null,
+      "confidence": 0.95,
+      "explicitness": "explicit",
+      "needs_review": false
+    },
+    {
+      "claim_id": "ad_platform_fee",
+      "source_id": "advertisement",
+      "source_type": "advertisement",
+      "field": "platform_fee",
+      "raw_value": "No hidden fees",
+      "normalized_value": 0.0,
+      "currency": "NGN",
+      "unit": "currency",
+      "frequency": null,
+      "polarity": "neutral",
+      "evidence_text": "No hidden fees",
+      "page_number": null,
+      "timestamp_start": null,
+      "timestamp_end": null,
+      "confidence": 0.9,
+      "explicitness": "explicit",
+      "needs_review": false
+    },
+    {
+      "claim_id": "ad_term",
+      "source_id": "advertisement",
+      "source_type": "advertisement",
+      "field": "repayment_term_days",
+      "raw_value": "Repay in 30 days",
+      "normalized_value": 30,
+      "currency": "NGN",
+      "unit": "days",
+      "frequency": null,
+      "polarity": "neutral",
+      "evidence_text": "Repay in 30 days",
+      "page_number": null,
+      "timestamp_start": null,
+      "timestamp_end": null,
+      "confidence": 0.92,
+      "explicitness": "explicit",
+      "needs_review": false
+    },
+    {
+      "claim_id": "audio_total",
+      "source_id": "sales_pitch",
+      "source_type": "sales_audio",
+      "field": "total_repayment",
+      "raw_value": "You will repay exactly \u20a6100,000",
+      "normalized_value": 100000.0,
+      "currency": "NGN",
+      "unit": "currency",
+      "frequency": null,
+      "polarity": "neutral",
+      "evidence_text": "You will repay exactly \u20a6100,000",
+      "page_number": null,
+      "timestamp_start": null,
+      "timestamp_end": null,
+      "confidence": 0.88,
+      "explicitness": "explicit",
+      "needs_review": false
+    },
+    {
+      "claim_id": "audio_processing",
+      "source_id": "sales_pitch",
+      "source_type": "sales_audio",
+      "field": "processing_fee",
+      "raw_value": "There are no processing charges",
+      "normalized_value": 0.0,
+      "currency": "NGN",
+      "unit": "currency",
+      "frequency": null,
+      "polarity": "neutral",
+      "evidence_text": "There are no processing charges",
+      "page_number": null,
+      "timestamp_start": null,
+      "timestamp_end": null,
+      "confidence": 0.87,
+      "explicitness": "explicit",
+      "needs_review": false
+    },
+    {
+      "claim_id": "audio_late_fee",
+      "source_id": "sales_pitch",
+      "source_type": "sales_audio",
+      "field": "late_fee",
+      "raw_value": "Late payment is only a one-time \u20a62,000 fee",
+      "normalized_value": 2000.0,
+      "currency": "NGN",
+      "unit": "currency",
+      "frequency": null,
+      "polarity": "neutral",
+      "evidence_text": "Late payment is only a one-time \u20a62,000 fee",
+      "page_number": null,
+      "timestamp_start": null,
+      "timestamp_end": null,
+      "confidence": 0.86,
+      "explicitness": "explicit",
+      "needs_review": false
+    },
+    {
+      "claim_id": "chat_auto_debit",
+      "source_id": "support_chat",
+      "source_type": "support_chat",
+      "field": "automatic_debit",
+      "raw_value": "There is no automatic debit after repayment",
+      "normalized_value": false,
+      "currency": "NGN",
+      "unit": "boolean",
+      "frequency": null,
+      "polarity": "neutral",
+      "evidence_text": "There is no automatic debit after repayment",
+      "page_number": null,
+      "timestamp_start": null,
+      "timestamp_end": null,
+      "confidence": 0.93,
+      "explicitness": "explicit",
+      "needs_review": false
+    },
+    {
+      "claim_id": "contract_principal",
+      "source_id": "contract",
+      "source_type": "contract",
+      "field": "principal",
+      "raw_value": "Principal: \u20a6100,000",
+      "normalized_value": 100000.0,
+      "currency": "NGN",
+      "unit": "currency",
+      "frequency": null,
+      "polarity": "neutral",
+      "evidence_text": "Principal: \u20a6100,000",
+      "page_number": null,
+      "timestamp_start": null,
+      "timestamp_end": null,
+      "confidence": 0.98,
+      "explicitness": "explicit",
+      "needs_review": false
+    },
+    {
+      "claim_id": "contract_platform_fee",
+      "source_id": "contract",
+      "source_type": "contract",
+      "field": "platform_fee",
+      "raw_value": "Platform fee: \u20a615,000",
+      "normalized_value": 15000.0,
+      "currency": "NGN",
+      "unit": "currency",
+      "frequency": null,
+      "polarity": "neutral",
+      "evidence_text": "Platform fee: \u20a615,000",
+      "page_number": null,
+      "timestamp_start": null,
+      "timestamp_end": null,
+      "confidence": 0.98,
+      "explicitness": "explicit",
+      "needs_review": false
+    },
+    {
+      "claim_id": "contract_total",
+      "source_id": "contract",
+      "source_type": "contract",
+      "field": "total_repayment",
+      "raw_value": "Total repayment: \u20a6115,000",
+      "normalized_value": 115000.0,
+      "currency": "NGN",
+      "unit": "currency",
+      "frequency": null,
+      "polarity": "neutral",
+      "evidence_text": "Total repayment: \u20a6115,000",
+      "page_number": null,
+      "timestamp_start": null,
+      "timestamp_end": null,
+      "confidence": 0.98,
+      "explicitness": "explicit",
+      "needs_review": false
+    },
+    {
+      "claim_id": "contract_late_fee",
+      "source_id": "contract",
+      "source_type": "contract",
+      "field": "late_fee",
+      "raw_value": "Late fee: 5% of outstanding balance per week",
+      "normalized_value": 5.0,
+      "currency": "NGN",
+      "unit": "currency",
+      "frequency": null,
+      "polarity": "neutral",
+      "evidence_text": "Late fee: 5% of outstanding balance per week",
+      "page_number": null,
+      "timestamp_start": null,
+      "timestamp_end": null,
+      "confidence": 0.97,
+      "explicitness": "explicit",
+      "needs_review": false
+    },
+    {
+      "claim_id": "contract_term",
+      "source_id": "contract",
+      "source_type": "contract",
+      "field": "repayment_term_days",
+      "raw_value": "Repayment term: 21 days",
+      "normalized_value": 21,
+      "currency": "NGN",
+      "unit": "days",
+      "frequency": null,
+      "polarity": "neutral",
+      "evidence_text": "Repayment term: 21 days",
+      "page_number": null,
+      "timestamp_start": null,
+      "timestamp_end": null,
+      "confidence": 0.97,
+      "explicitness": "explicit",
+      "needs_review": false
+    },
+    {
+      "claim_id": "contract_auto_debit",
+      "source_id": "contract",
+      "source_type": "contract",
+      "field": "automatic_debit",
+      "raw_value": "Automatic debit authorization: enabled",
+      "normalized_value": true,
+      "currency": "NGN",
+      "unit": "boolean",
+      "frequency": null,
+      "polarity": "neutral",
+      "evidence_text": "Automatic debit authorization: enabled",
+      "page_number": null,
+      "timestamp_start": null,
+      "timestamp_end": null,
+      "confidence": 0.98,
+      "explicitness": "explicit",
+      "needs_review": false
+    }
+  ],
+  "comparisons": [
+    {
+      "canonical_field": "automatic_debit",
+      "promise_claim_ids": [
+        "chat_auto_debit"
+      ],
+      "contract_claim_ids": [
+        "contract_auto_debit"
+      ],
+      "status": "CONTRADICTED",
+      "severity": "high",
+      "deterministic_difference": "+1.00",
+      "evidence_summary": "Promise: There is no automatic debit after repayment | Contract: Automatic debit authorization: enabled",
+      "clarification_question": "What is the correct automatic_debit \u2014 as promised (False) or as contracted (True)?"
+    },
+    {
+      "canonical_field": "interest_rate",
+      "promise_claim_ids": [
+        "ad_interest"
+      ],
+      "contract_claim_ids": [],
+      "status": "MISSING_EVIDENCE",
+      "severity": "medium",
+      "deterministic_difference": null,
+      "evidence_summary": "Promise: 0% interest; contract silent.",
+      "clarification_question": null
+    },
+    {
+      "canonical_field": "late_fee",
+      "promise_claim_ids": [
+        "audio_late_fee"
+      ],
+      "contract_claim_ids": [
+        "contract_late_fee"
+      ],
+      "status": "CONTRADICTED",
+      "severity": "high",
+      "deterministic_difference": "-1995.00",
+      "evidence_summary": "Promise: Late payment is only a one-time \u20a62,000 fee | Contract: Late fee: 5% of outstanding balance per week",
+      "clarification_question": "What is the correct late_fee \u2014 as promised (2000.0) or as contracted (5.0)?"
+    },
+    {
+      "canonical_field": "platform_fee",
+      "promise_claim_ids": [
+        "ad_platform_fee"
+      ],
+      "contract_claim_ids": [
+        "contract_platform_fee"
+      ],
+      "status": "CONTRADICTED",
+      "severity": "high",
+      "deterministic_difference": "+15000.00",
+      "evidence_summary": "Promise: No hidden fees | Contract: Platform fee: \u20a615,000",
+      "clarification_question": "What is the correct platform_fee \u2014 as promised (0.0) or as contracted (15000.0)?"
+    },
+    {
+      "canonical_field": "principal",
+      "promise_claim_ids": [
+        "ad_principal"
+      ],
+      "contract_claim_ids": [
+        "contract_principal"
+      ],
+      "status": "SUPPORTED",
+      "severity": "medium",
+      "deterministic_difference": null,
+      "evidence_summary": "Promise: Borrow \u20a6100,000 today | Contract: Principal: \u20a6100,000",
+      "clarification_question": null
+    },
+    {
+      "canonical_field": "processing_fee",
+      "promise_claim_ids": [
+        "audio_processing"
+      ],
+      "contract_claim_ids": [],
+      "status": "MISSING_EVIDENCE",
+      "severity": "medium",
+      "deterministic_difference": null,
+      "evidence_summary": "Promise: There are no processing charges; contract silent.",
+      "clarification_question": null
+    },
+    {
+      "canonical_field": "repayment_term_days",
+      "promise_claim_ids": [
+        "ad_term"
+      ],
+      "contract_claim_ids": [
+        "contract_term"
+      ],
+      "status": "CONTRADICTED",
+      "severity": "medium",
+      "deterministic_difference": "-9.00",
+      "evidence_summary": "Promise: Repay in 30 days | Contract: Repayment term: 21 days",
+      "clarification_question": "What is the correct repayment_term_days \u2014 as promised (30) or as contracted (21)?"
+    },
+    {
+      "canonical_field": "total_repayment",
+      "promise_claim_ids": [
+        "audio_total"
+      ],
+      "contract_claim_ids": [
+        "contract_total"
+      ],
+      "status": "CONTRADICTED",
+      "severity": "critical",
+      "deterministic_difference": "+15000.00",
+      "evidence_summary": "Promise: You will repay exactly \u20a6100,000 | Contract: Total repayment: \u20a6115,000",
+      "clarification_question": "What is the correct total_repayment \u2014 as promised (100000.0) or as contracted (115000.0)?"
+    }
+  ],
+  "contradictions": [
+    {
+      "canonical_field": "automatic_debit",
+      "promise_claim_ids": [
+        "chat_auto_debit"
+      ],
+      "contract_claim_ids": [
+        "contract_auto_debit"
+      ],
+      "status": "CONTRADICTED",
+      "severity": "high",
+      "deterministic_difference": "+1.00",
+      "evidence_summary": "Promise: There is no automatic debit after repayment | Contract: Automatic debit authorization: enabled",
+      "clarification_question": "What is the correct automatic_debit \u2014 as promised (False) or as contracted (True)?"
+    },
+    {
+      "canonical_field": "late_fee",
+      "promise_claim_ids": [
+        "audio_late_fee"
+      ],
+      "contract_claim_ids": [
+        "contract_late_fee"
+      ],
+      "status": "CONTRADICTED",
+      "severity": "high",
+      "deterministic_difference": "-1995.00",
+      "evidence_summary": "Promise: Late payment is only a one-time \u20a62,000 fee | Contract: Late fee: 5% of outstanding balance per week",
+      "clarification_question": "What is the correct late_fee \u2014 as promised (2000.0) or as contracted (5.0)?"
+    },
+    {
+      "canonical_field": "platform_fee",
+      "promise_claim_ids": [
+        "ad_platform_fee"
+      ],
+      "contract_claim_ids": [
+        "contract_platform_fee"
+      ],
+      "status": "CONTRADICTED",
+      "severity": "high",
+      "deterministic_difference": "+15000.00",
+      "evidence_summary": "Promise: No hidden fees | Contract: Platform fee: \u20a615,000",
+      "clarification_question": "What is the correct platform_fee \u2014 as promised (0.0) or as contracted (15000.0)?"
+    },
+    {
+      "canonical_field": "repayment_term_days",
+      "promise_claim_ids": [
+        "ad_term"
+      ],
+      "contract_claim_ids": [
+        "contract_term"
+      ],
+      "status": "CONTRADICTED",
+      "severity": "medium",
+      "deterministic_difference": "-9.00",
+      "evidence_summary": "Promise: Repay in 30 days | Contract: Repayment term: 21 days",
+      "clarification_question": "What is the correct repayment_term_days \u2014 as promised (30) or as contracted (21)?"
+    },
+    {
+      "canonical_field": "total_repayment",
+      "promise_claim_ids": [
+        "audio_total"
+      ],
+      "contract_claim_ids": [
+        "contract_total"
+      ],
+      "status": "CONTRADICTED",
+      "severity": "critical",
+      "deterministic_difference": "+15000.00",
+      "evidence_summary": "Promise: You will repay exactly \u20a6100,000 | Contract: Total repayment: \u20a6115,000",
+      "clarification_question": "What is the correct total_repayment \u2014 as promised (100000.0) or as contracted (115000.0)?"
+    }
+  ],
+  "clarification_questions": [
+    "What is the correct automatic_debit \u2014 as promised (False) or as contracted (True)?",
+    "What is the correct late_fee \u2014 as promised (2000.0) or as contracted (5.0)?",
+    "What is the correct platform_fee \u2014 as promised (0.0) or as contracted (15000.0)?",
+    "What is the correct repayment_term_days \u2014 as promised (30) or as contracted (21)?",
+    "What is the correct total_repayment \u2014 as promised (100000.0) or as contracted (115000.0)?"
+  ],
+  "disclaimer": "EchoClause compares representations across supplied evidence. It does not provide legal advice or determine legal enforceability.",
+  "demo_validation": {
+    "expected_contradictions": 5,
+    "detected_gold_contradictions": 5,
+    "all_gold_detected": true,
+    "detected_fields": [
+      "automatic_debit",
+      "late_fee",
+      "platform_fee",
+      "repayment_term_days",
+      "total_repayment"
+    ],
+    "missing_fields": []
+  },
+  "extraction_trace": {
+    "mode": "recorded"
+  },
+  "model_id": "recorded_replay",
+  "timestamp_utc": "20260802T065053Z"
+}
