@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>EchoClause — Nuru Credit Demo</title>
+  <style>
+    :root { font-family: system-ui, sans-serif; color: #1a1a2e; }
+    body { max-width: 960px; margin: 0 auto; padding: 1.5rem; background: #f8f9fc; }
+    h1 { color: #16213e; }
+    .banner { background: #e8f4fd; border-left: 4px solid #0d6efd; padding: 0.75rem 1rem; margin-bottom: 1.5rem; }
+    table { width: 100%; border-collapse: collapse; background: #fff; margin-bottom: 1.5rem; }
+    th, td { border: 1px solid #dee2e6; padding: 0.5rem; text-align: left; font-size: 0.9rem; }
+    th { background: #16213e; color: #fff; }
+    .contradicted { color: #c0392b; font-weight: bold; }
+    .assets { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+    .assets img { max-width: 100%; border: 1px solid #ccc; border-radius: 4px; }
+    footer { font-size: 0.85rem; color: #666; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <h1>EchoClause — What They Said vs. What You Sign</h1>
+  <div class="banner">
+    Interactive replay generated from a recorded Gemma 4 run.
+    Model: <strong>recorded_replay</strong> · Conflicts: <strong>5</strong>
+  </div>
+
+  <h2>Demo Evidence (Nuru Credit)</h2>
+  <div class="assets">
+    <figure><img src="../assets/demo_case/advertisement.png" alt="Advertisement"/><figcaption>Advertisement</figcaption></figure>
+    <figure><img src="../assets/demo_case/support_chat.png" alt="Support chat"/><figcaption>Support chat</figcaption></figure>
+    <figure><img src="../assets/demo_case/contract.png" alt="Contract"/><figcaption>Contract</figcaption></figure>
+  </div>
+
+  <h2>Detected Contradictions</h2>
+  <table>
+    <thead><tr><th>Field</th><th>Status</th><th>Severity</th><th>Evidence</th></tr></thead>
+    <tbody><tr>
+          <td>ClaimField.AUTOMATIC_DEBIT</td>
+          <td class="status contradicted">ComparisonStatus.CONTRADICTED</td>
+          <td>high</td>
+          <td>Promise: There is no automatic debit after repayment | Contract: Automatic debit authorization: enabled</td>
+        </tr>
+<tr>
+          <td>ClaimField.LATE_FEE</td>
+          <td class="status contradicted">ComparisonStatus.CONTRADICTED</td>
+          <td>high</td>
+          <td>Promise: Late payment is only a one-time ₦2,000 fee | Contract: Late fee: 5% of outstanding balance per week</td>
+        </tr>
+<tr>
+          <td>ClaimField.PLATFORM_FEE</td>
+          <td class="status contradicted">ComparisonStatus.CONTRADICTED</td>
+          <td>high</td>
+          <td>Promise: No hidden fees | Contract: Platform fee: ₦15,000</td>
+        </tr>
+<tr>
+          <td>ClaimField.REPAYMENT_TERM_DAYS</td>
+          <td class="status contradicted">ComparisonStatus.CONTRADICTED</td>
+          <td>medium</td>
+          <td>Promise: Repay in 30 days | Contract: Repayment term: 21 days</td>
+        </tr>
+<tr>
+          <td>ClaimField.TOTAL_REPAYMENT</td>
+          <td class="status contradicted">ComparisonStatus.CONTRADICTED</td>
+          <td>critical</td>
+          <td>Promise: You will repay exactly ₦100,000 | Contract: Total repayment: ₦115,000</td>
+        </tr>
+</tbody>
+  </table>
+
+  <h2>Extracted Claims (sample)</h2>
+  <table>
+    <thead><tr><th>Source</th><th>Field</th><th>Raw value</th></tr></thead>
+    <tbody><tr>
+          <td>advertisement</td>
+          <td>ClaimField.PRINCIPAL</td>
+          <td>Borrow ₦100,000 today</td>
+        </tr>
+<tr>
+          <td>advertisement</td>
+          <td>ClaimField.INTEREST_RATE</td>
+          <td>0% interest</td>
+        </tr>
+<tr>
+          <td>advertisement</td>
+          <td>ClaimField.PLATFORM_FEE</td>
+          <td>No hidden fees</td>
+        </tr>
+<tr>
+          <td>advertisement</td>
+          <td>ClaimField.REPAYMENT_TERM_DAYS</td>
+          <td>Repay in 30 days</td>
+        </tr>
+<tr>
+          <td>sales_pitch</td>
+          <td>ClaimField.TOTAL_REPAYMENT</td>
+          <td>You will repay exactly ₦100,000</td>
+        </tr>
+<tr>
+          <td>sales_pitch</td>
+          <td>ClaimField.PROCESSING_FEE</td>
+          <td>There are no processing charges</td>
+        </tr>
+<tr>
+          <td>sales_pitch</td>
+          <td>ClaimField.LATE_FEE</td>
+          <td>Late payment is only a one-time ₦2,000 fee</td>
+        </tr>
+<tr>
+          <td>support_chat</td>
+          <td>ClaimField.AUTOMATIC_DEBIT</td>
+          <td>There is no automatic debit after repayment</td>
+        </tr>
+<tr>
+          <td>contract</td>
+          <td>ClaimField.PRINCIPAL</td>
+          <td>Principal: ₦100,000</td>
+        </tr>
+<tr>
+          <td>contract</td>
+          <td>ClaimField.PLATFORM_FEE</td>
+          <td>Platform fee: ₦15,000</td>
+        </tr>
+<tr>
+          <td>contract</td>
+          <td>ClaimField.TOTAL_REPAYMENT</td>
+          <td>Total repayment: ₦115,000</td>
+        </tr>
+<tr>
+          <td>contract</td>
+          <td>ClaimField.LATE_FEE</td>
+          <td>Late fee: 5% of outstanding balance per week</td>
+        </tr>
+<tr>
+          <td>contract</td>
+          <td>ClaimField.REPAYMENT_TERM_DAYS</td>
+          <td>Repayment term: 21 days</td>
+        </tr>
+<tr>
+          <td>contract</td>
+          <td>ClaimField.AUTOMATIC_DEBIT</td>
+          <td>Automatic debit authorization: enabled</td>
+        </tr>
+</tbody>
+  </table>
+
+  <footer>
+    EchoClause compares representations across supplied evidence.
+    It does not provide legal advice or determine legal enforceability.
+  </footer>
+</body>
+</html>

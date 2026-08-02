@@ -1,0 +1,15 @@
+{
+  "id": "mayn/echo-clause-gemma4-demo",
+  "title": "EchoClause Gemma 4 Demo",
+  "code_file": "echo_clause_kaggle_demo.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "machine_shape": "GpuT4x2",
+  "dataset_sources": [],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "model_sources": []
+}

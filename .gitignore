@@ -11,3 +11,4 @@ build/
 
 # Runtime artifacts are committed when produced by real runs
 # Keep directory via .gitkeep only initially
+notebooks/_kaggle_bundle/
