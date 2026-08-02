@@ -31,7 +31,7 @@ def make_advertisement(path: Path) -> None:
     font_s = _font(24)
     draw.text((40, 40), "Nuru Credit", fill=(255, 255, 255), font=font_l)
     lines = [
-        "Borrow ₦100,000 today",
+        "Borrow $1,000 today",
         "0% interest",
         "No hidden fees",
         "Repay in 30 days",
@@ -66,9 +66,9 @@ def make_contract(path: Path) -> None:
     font = _font(22)
     draw.text((40, 30), "Nuru Credit — Loan Agreement (Synthetic Demo)", fill=(0, 0, 0), font=font_h)
     clauses = [
-        "Principal: ₦100,000",
-        "Platform fee: ₦15,000",
-        "Total repayment: ₦115,000",
+        "Principal: $1,000",
+        "Platform fee: $150",
+        "Total repayment: $1,150",
         "Late fee: 5% of outstanding balance per week",
         "Repayment term: 21 days",
         "Automatic debit authorization: enabled",
@@ -103,9 +103,9 @@ def make_sales_pitch_wav(path: Path) -> None:
 
 def make_transcript(path: Path) -> None:
     text = (
-        "You will repay exactly ₦100,000.\n"
+        "You will repay exactly $1,000.\n"
         "There are no processing charges.\n"
-        "Late payment is only a one-time ₦2,000 fee.\n"
+        "Late payment is only a one-time $20 fee.\n"
     )
     path.write_text(text, encoding="utf-8")
 
@@ -124,22 +124,22 @@ def make_gold(path: Path) -> None:
                 "id": "c1_platform_fee",
                 "canonical_field": "platform_fee",
                 "promise_summary": "No hidden fees (advertisement)",
-                "contract_summary": "Platform fee ₦15,000",
+                "contract_summary": "Platform fee $150",
                 "expected_status": "CONTRADICTED",
                 "severity": "high",
             },
             {
                 "id": "c2_total_repayment",
                 "canonical_field": "total_repayment",
-                "promise_summary": "Repay ₦100,000 (ad + sales pitch)",
-                "contract_summary": "Total repayment ₦115,000",
+                "promise_summary": "Repay $1,000 (ad + sales pitch)",
+                "contract_summary": "Total repayment $1,150",
                 "expected_status": "CONTRADICTED",
                 "severity": "critical",
             },
             {
                 "id": "c3_late_fee",
                 "canonical_field": "late_fee",
-                "promise_summary": "One-time ₦2,000 late fee (sales pitch)",
+                "promise_summary": "One-time $20 late fee (sales pitch)",
                 "contract_summary": "5% of outstanding balance per week",
                 "expected_status": "CONTRADICTED",
                 "severity": "high",
@@ -165,6 +165,208 @@ def make_gold(path: Path) -> None:
     path.write_text(json.dumps(gold, indent=2), encoding="utf-8")
 
 
+def make_recorded_claims(path: Path) -> None:
+    """Frozen Gemma replay fixture aligned with demo assets (USD)."""
+    recorded = {
+        "description": "Claims extracted from Nuru Credit demo assets (Gemma 4 replay fixture)",
+        "model_id": "google/gemma-4-E2B-it",
+        "claims": [
+            {
+                "claim_id": "ad_principal",
+                "source_id": "advertisement",
+                "source_type": "advertisement",
+                "field": "principal",
+                "raw_value": "Borrow $1,000 today",
+                "normalized_value": 1000,
+                "currency": "USD",
+                "unit": "currency",
+                "evidence_text": "Borrow $1,000 today",
+                "confidence": 0.95,
+                "explicitness": "explicit",
+                "needs_review": False,
+            },
+            {
+                "claim_id": "ad_interest",
+                "source_id": "advertisement",
+                "source_type": "advertisement",
+                "field": "interest_rate",
+                "raw_value": "0% interest",
+                "normalized_value": 0,
+                "unit": "percent",
+                "evidence_text": "0% interest",
+                "confidence": 0.95,
+                "explicitness": "explicit",
+                "needs_review": False,
+            },
+            {
+                "claim_id": "ad_platform_fee",
+                "source_id": "advertisement",
+                "source_type": "advertisement",
+                "field": "platform_fee",
+                "raw_value": "No hidden fees",
+                "normalized_value": 0,
+                "currency": "USD",
+                "unit": "currency",
+                "evidence_text": "No hidden fees",
+                "confidence": 0.9,
+                "explicitness": "explicit",
+                "needs_review": False,
+            },
+            {
+                "claim_id": "ad_term",
+                "source_id": "advertisement",
+                "source_type": "advertisement",
+                "field": "repayment_term_days",
+                "raw_value": "Repay in 30 days",
+                "normalized_value": 30,
+                "unit": "days",
+                "evidence_text": "Repay in 30 days",
+                "confidence": 0.92,
+                "explicitness": "explicit",
+                "needs_review": False,
+            },
+            {
+                "claim_id": "audio_total",
+                "source_id": "sales_pitch",
+                "source_type": "sales_audio",
+                "field": "total_repayment",
+                "raw_value": "You will repay exactly $1,000",
+                "normalized_value": 1000,
+                "currency": "USD",
+                "unit": "currency",
+                "evidence_text": "You will repay exactly $1,000",
+                "confidence": 0.88,
+                "explicitness": "explicit",
+                "needs_review": False,
+            },
+            {
+                "claim_id": "audio_processing",
+                "source_id": "sales_pitch",
+                "source_type": "sales_audio",
+                "field": "processing_fee",
+                "raw_value": "There are no processing charges",
+                "normalized_value": 0,
+                "currency": "USD",
+                "unit": "currency",
+                "evidence_text": "There are no processing charges",
+                "confidence": 0.87,
+                "explicitness": "explicit",
+                "needs_review": False,
+            },
+            {
+                "claim_id": "audio_late_fee",
+                "source_id": "sales_pitch",
+                "source_type": "sales_audio",
+                "field": "late_fee",
+                "raw_value": "Late payment is only a one-time $20 fee",
+                "normalized_value": 20,
+                "currency": "USD",
+                "unit": "currency",
+                "evidence_text": "Late payment is only a one-time $20 fee",
+                "confidence": 0.86,
+                "explicitness": "explicit",
+                "needs_review": False,
+            },
+            {
+                "claim_id": "chat_auto_debit",
+                "source_id": "support_chat",
+                "source_type": "support_chat",
+                "field": "automatic_debit",
+                "raw_value": "There is no automatic debit after repayment",
+                "normalized_value": False,
+                "unit": "boolean",
+                "evidence_text": "There is no automatic debit after repayment",
+                "confidence": 0.93,
+                "explicitness": "explicit",
+                "needs_review": False,
+            },
+            {
+                "claim_id": "contract_principal",
+                "source_id": "contract",
+                "source_type": "contract",
+                "field": "principal",
+                "raw_value": "Principal: $1,000",
+                "normalized_value": 1000,
+                "currency": "USD",
+                "unit": "currency",
+                "evidence_text": "Principal: $1,000",
+                "confidence": 0.98,
+                "explicitness": "explicit",
+                "needs_review": False,
+            },
+            {
+                "claim_id": "contract_platform_fee",
+                "source_id": "contract",
+                "source_type": "contract",
+                "field": "platform_fee",
+                "raw_value": "Platform fee: $150",
+                "normalized_value": 150,
+                "currency": "USD",
+                "unit": "currency",
+                "evidence_text": "Platform fee: $150",
+                "confidence": 0.98,
+                "explicitness": "explicit",
+                "needs_review": False,
+            },
+            {
+                "claim_id": "contract_total",
+                "source_id": "contract",
+                "source_type": "contract",
+                "field": "total_repayment",
+                "raw_value": "Total repayment: $1,150",
+                "normalized_value": 1150,
+                "currency": "USD",
+                "unit": "currency",
+                "evidence_text": "Total repayment: $1,150",
+                "confidence": 0.98,
+                "explicitness": "explicit",
+                "needs_review": False,
+            },
+            {
+                "claim_id": "contract_late_fee",
+                "source_id": "contract",
+                "source_type": "contract",
+                "field": "late_fee",
+                "raw_value": "Late fee: 5% of outstanding balance per week",
+                "normalized_value": 5,
+                "unit": "percent",
+                "frequency": "weekly",
+                "evidence_text": "Late fee: 5% of outstanding balance per week",
+                "confidence": 0.97,
+                "explicitness": "explicit",
+                "needs_review": False,
+            },
+            {
+                "claim_id": "contract_term",
+                "source_id": "contract",
+                "source_type": "contract",
+                "field": "repayment_term_days",
+                "raw_value": "Repayment term: 21 days",
+                "normalized_value": 21,
+                "unit": "days",
+                "evidence_text": "Repayment term: 21 days",
+                "confidence": 0.97,
+                "explicitness": "explicit",
+                "needs_review": False,
+            },
+            {
+                "claim_id": "contract_auto_debit",
+                "source_id": "contract",
+                "source_type": "contract",
+                "field": "automatic_debit",
+                "raw_value": "Automatic debit authorization: enabled",
+                "normalized_value": True,
+                "unit": "boolean",
+                "evidence_text": "Automatic debit authorization: enabled",
+                "confidence": 0.98,
+                "explicitness": "explicit",
+                "needs_review": False,
+            },
+        ],
+    }
+    path.write_text(json.dumps(recorded, indent=2), encoding="utf-8")
+
+
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     make_advertisement(OUT / "advertisement.png")
@@ -173,6 +375,7 @@ def main() -> None:
     make_sales_pitch_wav(OUT / "sales_pitch.wav")
     make_transcript(OUT / "sales_pitch.txt")
     make_gold(OUT / "gold.json")
+    make_recorded_claims(OUT / "recorded_claims.json")
     print(f"Generated demo assets in {OUT}")
 
 
