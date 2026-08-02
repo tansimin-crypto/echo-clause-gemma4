@@ -23,7 +23,7 @@ Last updated: 2026-08-02 (R0–R10 completion pass)
 | R6 | Static demo `docs/index.html` | **passed** |
 | R7 | Kaggle notebook | **passed** (v7+ with CPU fallback) |
 | R8 | README + WRITEUP.md | **passed** |
-| R9 | Demo video | **manual** — user must record/upload |
+| R9 | Demo video | **passed** — `submission/echo-clause-demo-90s.mp4` (90 s, burned subtitles) |
 | R10 | pytest + ruff + verify_release.py | **passed** |
 
 ## Kaggle
@@ -39,7 +39,7 @@ Last updated: 2026-08-02 (R0–R10 completion pass)
 ## Manual steps (user)
 
 1. **Hackathon form** — click Submit on Kaggle hackathon page (agent cannot submit).
-2. **Demo video** — record 3–5 min walkthrough; upload per hackathon instructions.
+2. **Demo video** — upload `submission/echo-clause-demo-90s.mp4` per hackathon instructions (90 s, English subtitles burned in).
 3. **Gemma license** — ensure accepted at [kaggle.com/models/google/gemma-4](https://www.kaggle.com/models/google/gemma-4).
 4. **Re-run notebook on T4** when available for live GPU R1 artifact (optional upgrade from CPU-verified).
 
