@@ -8,7 +8,13 @@ Evidence-grounded promise-to-contract reconciliation powered by **Gemma 4** mult
 
 Borrowers sign loan contracts after seeing ads, hearing sales pitches, and chatting with support — but the fine print often contradicts what they were told. **EchoClause** ingests multimodal evidence (images, audio, chat screenshots), extracts structured financial claims with Gemma 4, normalizes terms deterministically, and surfaces contradictions *before* signing.
 
+> **Record the pitch. Photograph the contract. See every mismatch before you sign.**
+
+**Live demo:** [docs/index.html](docs/index.html) — interactive static replay with evidence gallery, claim cards, and expandable conflict matrix (GitHub Pages ready).
+
 **Demo case:** fictional **Nuru Credit** micro-loan — 5 contradictions across platform fee, total repayment, late fee, term days, and automatic debit.
+
+![EchoClause demo preview](docs/artifacts/og-preview.svg)
 
 ## Architecture
 
@@ -74,7 +80,11 @@ echo-clause-gemma4/
 ├── assets/demo_case/     # Synthetic Nuru Credit evidence + gold.json
 ├── scripts/              # Spike, pipeline, static demo, Kaggle push
 ├── notebooks/            # Kaggle demo notebook + kernel metadata
-├── docs/index.html       # Static replay demo (GitHub Pages)
+├── docs/                 # Static replay demo (GitHub Pages)
+│   ├── index.html        # Dashboard UI
+│   ├── app.js + styles.css
+│   ├── data/demo.json    # Recorded pipeline output
+│   └── artifacts/        # Architecture diagram, OG preview
 ├── app.py                # Gradio UI
 └── submission/WRITEUP.md # Hackathon writeup
 ```
