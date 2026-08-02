@@ -1,0 +1,23 @@
+{
+  "title": "EchoClause — What They Said vs. What You Sign",
+  "target_duration_seconds": 90.0,
+  "actual_duration_seconds": 90.0,
+  "within_tolerance": true,
+  "video": "D:\\kaggle\\gemma-finance\\echo-clause-gemma4\\submission\\echo-clause-demo-90s.mp4",
+  "video_bytes": 3235571,
+  "srt": "D:\\kaggle\\gemma-finance\\echo-clause-gemma4\\submission\\echo-clause-demo-90s.srt",
+  "vtt": "D:\\kaggle\\gemma-finance\\echo-clause-gemma4\\submission\\echo-clause-demo-90s.vtt",
+  "bib_tooling": "D:\\CodexWorkspaces\\bib",
+  "kokoro_model": "D:\\CodexWorkspaces\\bib\\work\\voice\\kokoro\\models\\kokoro-v1.0.onnx",
+  "ffmpeg": "D:\\CodexWorkspaces\\bib\\work\\video\\vendor\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
+  "render_command": "Set-Location D:\\Agent\\echo-clause-video; python render_video.py",
+  "scene_count": 7,
+  "subtitle_cue_count": 16,
+  "resolution": "1920x1080",
+  "fps": 30,
+  "disclosures": {
+    "narration": "AI voice synthesized locally with Kokoro-82M am_michael at speed 1.08",
+    "demo": "Synthetic Nuru Credit assets; recorded Gemma replay — not live inference",
+    "data": "No real personal or company data"
+  }
+}
