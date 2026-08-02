@@ -80,6 +80,53 @@ python app.py                                  # Gradio demo
 
 Kaggle notebook `notebooks/echo_clause_kaggle_demo.ipynb` sets `RUN_FULL_BENCHMARK = False` and runs the complete demo on T4 with HF secrets.
 
+## Design Principles
+
+**Evidence first.** Every extracted claim carries an `evidence_text` field with a verbatim quote from the source. Comparisons reference these quotes in the final report so users can verify model outputs against original artifacts.
+
+**Deterministic math, probabilistic reading.** Gemma may misread a fee amount; our normalization layer re-parses currency symbols and percentages with regex-based rules. Contradiction status comes from typed comparison functions, not from LLM judgment calls.
+
+**Allowlisted tools only.** The function-calling registry accepts five tools with Pydantic-validated arguments. Unknown tool names, malformed JSON, or shell-like payloads are rejected with a trace entry — no `eval`, no arbitrary code.
+
+**Provenance by default.** Each run writes JSON artifacts containing git SHA, prompt hash, asset SHA-256 checksums, package versions, GPU metadata, load-attempt history, and raw model output strings.
+
+## Implementation Walkthrough
+
+### Schemas and demo assets (R0)
+
+We frozen fourteen `ClaimField` enums, six comparison statuses, and tool argument models in Pydantic v2. Synthetic PNG and WAV assets for Nuru Credit are generated programmatically (`scripts/generate_demo_assets.py`) so the repository stays self-contained without external downloads. `gold.json` locks the five expected contradictions for automated regression.
+
+### Gemma runtime (R1)
+
+`echo_clause/gemma_runtime.py` implements bounded loading: two E4B configurations (bf16 auto, 4-bit) followed by E2B fallback. The spike script exercises three paths — image claim extraction from `advertisement.png`, audio claim extraction from `sales_pitch.wav`, and function calling via `calculate_fee_percentage`. Windows development clears proxy environment variables and installs `httpx[socks]` to avoid Hugging Face download failures.
+
+### Pipeline (R2)
+
+`echo_clause/pipeline.py` connects extraction, normalization, reconciliation, and reporting. Promise sources (advertisement, sales audio, support chat) are compared against contract claims field-by-field. The demo validates against `gold.json` and reports which canonical fields were detected as contradicted. A `recorded_claims.json` fixture enables offline replay when GPU inference is unavailable; live mode replaces this with Gemma-extracted claims and optional ASR transcript fallback for audio.
+
+### User interfaces (R5–R6)
+
+The Gradio app (`app.py`) presents a three-column layout: demo assets on the left, extracted claims in the center, and conflicts on the right, with a collapsible JSON debug trace. The static GitHub Pages demo (`docs/index.html`) renders the same recorded run for judges who cannot launch Python locally.
+
+### Kaggle packaging (R7)
+
+The notebook `notebooks/echo_clause_kaggle_demo.ipynb` installs the package, runs the R1 spike, executes the full pipeline on T4, validates 5/5 gold detection, and runs pytest with `RUN_FULL_BENCHMARK = False`. `scripts/kaggle_push.py` stages a self-contained kernel bundle for one-command upload.
+
+## Lessons Learned
+
+Running Gemma 4 locally on Windows without CUDA proved impractical — Hugging Face timeouts and proxy issues blocked model download. Kaggle T4 with `HF_TOKEN` secrets is the intended production path for hackathon judges. Separating recorded replay from live inference let us complete R2–R8 while R1 awaits GPU verification.
+
+We also learned that synthetic audio (simple tone WAV) may not produce rich Gemma audio claims; the disclosed transcript fallback ensures the pipeline remains testable without misrepresenting native audio capability.
+
+## Future Work
+
+- Expand beyond the single Nuru Credit scenario with user-uploaded evidence
+- Add Swahili/Arabic localization for East African micro-loan markets
+- Integrate PDF contract parsing while keeping Gemma-native image processing
+- Publish the GitHub repository and enable GitHub Pages for the static replay
+
+## Team and Acknowledgments
+
 ## Impact
 
 EchoClause demonstrates how Gemma 4's multimodal and tool-use capabilities can protect borrowers in high-velocity lending flows. By grounding every conflict in quoted evidence and deterministic math, it gives consumers a concrete checklist — *"You were told X, but clause Y says Z"* — without replacing legal counsel.
@@ -89,3 +136,4 @@ For hackathon judges, the project shows responsible Gemma integration: bounded m
 ---
 
 *EchoClause compares representations across supplied evidence. It does not provide legal advice or determine legal enforceability.*
+
