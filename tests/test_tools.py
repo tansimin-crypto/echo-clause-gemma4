@@ -25,7 +25,7 @@ def test_execute_calculate_fee_percentage():
     trace = execute_tool_call(
         {
             "name": "calculate_fee_percentage",
-            "arguments": {"fee_amount": 15000, "principal": 100000},
+            "arguments": {"fee_amount": 150, "principal": 1000},
         }
     )
     assert trace.validation_ok
@@ -48,8 +48,8 @@ def test_normalize_via_registry():
     trace = execute_tool_call(
         {
             "name": "normalize_financial_term",
-            "arguments": {"raw_text": "₦100,000", "field": ClaimField.PRINCIPAL.value},
+            "arguments": {"raw_text": "$1,000", "field": ClaimField.PRINCIPAL.value},
         }
     )
     assert trace.validation_ok
-    assert trace.output["normalized_value"] == 100000.0
+    assert trace.output["normalized_value"] == 1000.0
