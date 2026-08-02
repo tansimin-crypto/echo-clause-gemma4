@@ -14,24 +14,24 @@
   </defs>
   <rect width="1200" height="220" fill="url(#bg)" rx="12"/>
 
-  <!-- Stage boxes -->
   <g font-family="DM Sans, system-ui, sans-serif">
-    <!-- 1 Evidence -->
     <g transform="translate(24, 50)" filter="url(#shadow)">
       <rect width="150" height="120" rx="10" fill="#fff" stroke="#e2e8f0"/>
       <rect width="150" height="28" rx="10" fill="#eff6ff"/>
       <rect y="18" width="150" height="10" fill="#eff6ff"/>
       <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af">EVIDENCE</text>
-      <text x="75" y="52" text-anchor="middle" font-size="10" fill="#64748b">PNG · WAV · Chat</text>
-      <text x="75" y="72" text-anchor="middle" font-size="10" fill="#64748b">Ad · Pitch · Contract</text>
-      <circle cx="40" cy="95" r="14" fill="#dbeafe"/><text x="40" y="99" text-anchor="middle" font-size="12">=÷</text>
-      <circle cx="75" cy="95" r="14" fill="#fef3c7"/><text x="75" y="99" text-anchor="middle" font-size="12"><™</text>
-      <circle cx="110" cy="95" r="14" fill="#ede9fe"/><text x="110" y="99" text-anchor="middle" font-size="12">=¬</text>
+      <text x="75" y="52" text-anchor="middle" font-size="10" fill="#64748b">PNG Â· WAV Â· Chat</text>
+      <text x="75" y="72" text-anchor="middle" font-size="10" fill="#64748b">Ad Â· Pitch Â· Contract</text>
+      <circle cx="40" cy="95" r="14" fill="#dbeafe"/>
+      <text x="40" y="99" text-anchor="middle" font-size="10" fill="#1e40af">Ad</text>
+      <circle cx="75" cy="95" r="14" fill="#fef3c7"/>
+      <text x="75" y="99" text-anchor="middle" font-size="10" fill="#92400e">WAV</text>
+      <circle cx="110" cy="95" r="14" fill="#ede9fe"/>
+      <text x="110" y="99" text-anchor="middle" font-size="10" fill="#6d28d9">Doc</text>
     </g>
 
-    <text x="192" y="115" font-size="22" fill="#94a3b8">’</text>
+    <text x="192" y="115" font-size="22" fill="#94a3b8">â†’</text>
 
-    <!-- 2 Gemma -->
     <g transform="translate(210, 50)" filter="url(#shadow)">
       <rect width="170" height="120" rx="10" fill="url(#teal)"/>
       <text x="85" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">GEMMA 4</text>
@@ -42,45 +42,41 @@
       <rect x="35" y="100" width="72" height="8" rx="4" fill="#fde68a"/>
     </g>
 
-    <text x="398" y="115" font-size="22" fill="#94a3b8">’</text>
+    <text x="398" y="115" font-size="22" fill="#94a3b8">â†’</text>
 
-    <!-- 3 Normalize -->
     <g transform="translate(416, 50)" filter="url(#shadow)">
       <rect width="150" height="120" rx="10" fill="#fff" stroke="#e2e8f0"/>
       <text x="75" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#0f766e">NORMALIZE</text>
-      <text x="75" y="52" text-anchor="middle" font-size="10" fill="#64748b">Currency · Days</text>
-      <text x="75" y="72" text-anchor="middle" font-size="10" fill="#64748b">Percent · Boolean</text>
-      <text x="75" y="100" text-anchor="middle" font-size="9" font-family="JetBrains Mono, monospace" fill="#475569">¦ · % · days</text>
+      <text x="75" y="52" text-anchor="middle" font-size="10" fill="#64748b">Currency Â· Days</text>
+      <text x="75" y="72" text-anchor="middle" font-size="10" fill="#64748b">Percent Â· Boolean</text>
+      <text x="75" y="100" text-anchor="middle" font-size="9" font-family="JetBrains Mono, monospace" fill="#475569">â‚¦ Â· % Â· days</text>
     </g>
 
-    <text x="584" y="115" font-size="22" fill="#94a3b8">’</text>
+    <text x="584" y="115" font-size="22" fill="#94a3b8">â†’</text>
 
-    <!-- 4 Calculate -->
     <g transform="translate(602, 50)" filter="url(#shadow)">
       <rect width="150" height="120" rx="10" fill="#fff" stroke="#e2e8f0"/>
       <text x="75" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#0f766e">CALCULATE</text>
-      <text x="75" y="52" text-anchor="middle" font-size="10" fill="#64748b">Fee % · Totals</text>
+      <text x="75" y="52" text-anchor="middle" font-size="10" fill="#64748b">Fee % Â· Totals</text>
       <text x="75" y="72" text-anchor="middle" font-size="10" fill="#64748b">Term compare</text>
       <text x="75" y="100" text-anchor="middle" font-size="9" font-family="JetBrains Mono, monospace" fill="#475569">deterministic</text>
     </g>
 
-    <text x="770" y="115" font-size="22" fill="#94a3b8">’</text>
+    <text x="770" y="115" font-size="22" fill="#94a3b8">â†’</text>
 
-    <!-- 5 Reconcile -->
     <g transform="translate(788, 50)" filter="url(#shadow)">
       <rect width="150" height="120" rx="10" fill="#fff" stroke="#e2e8f0"/>
       <text x="75" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#0f766e">RECONCILE</text>
       <text x="75" y="52" text-anchor="middle" font-size="10" fill="#64748b">Promise vs contract</text>
       <text x="75" y="72" text-anchor="middle" font-size="10" fill="#64748b">Severity scoring</text>
       <rect x="30" y="88" width="45" height="22" rx="6" fill="#ecfdf5" stroke="#a7f3d0"/>
-      <text x="52" y="103" text-anchor="middle" font-size="9" fill="#059669"></text>
+      <text x="52" y="103" text-anchor="middle" font-size="9" fill="#059669">OK</text>
       <rect x="80" y="88" width="45" height="22" rx="6" fill="#fef2f2" stroke="#fecaca"/>
-      <text x="102" y="103" text-anchor="middle" font-size="9" fill="#dc2626"></text>
+      <text x="102" y="103" text-anchor="middle" font-size="9" fill="#dc2626">X</text>
     </g>
 
-    <text x="956" y="115" font-size="22" fill="#94a3b8">’</text>
+    <text x="956" y="115" font-size="22" fill="#94a3b8">â†’</text>
 
-    <!-- 6 Report -->
     <g transform="translate(974, 50)" filter="url(#shadow)">
       <rect width="200" height="120" rx="10" fill="#fff" stroke="#f59e0b" stroke-width="2"/>
       <text x="100" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#92400e">CONFLICT REPORT</text>
@@ -93,6 +89,6 @@
   </g>
 
   <text x="600" y="200" text-anchor="middle" font-family="DM Sans, system-ui, sans-serif" font-size="11" fill="#94a3b8">
-    EchoClause · Evidence-grounded reconciliation · No legal advice
+    EchoClause Â· Evidence-grounded reconciliation Â· No legal advice
   </text>
 </svg>
