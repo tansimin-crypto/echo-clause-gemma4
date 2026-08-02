@@ -6,10 +6,10 @@ Single demo scenario: digital micro-loan sales promises vs. signed contract for 
 
 ## Inputs
 
-1. Advertisement image — ₦100k, 0% interest, no hidden fees, 30 days
+1. Advertisement image — $1,000, 0% interest, no hidden fees, 30 days
 2. Sales pitch audio + transcript
 3. Support chat screenshot — no automatic debit
-4. Contract page — ₦15k platform fee, ₦115k total, 5%/week late fee, 21 days, auto-debit
+4. Contract page — $150 platform fee, $1,150 total, 5%/week late fee, 21 days, auto-debit
 
 ## Expected contradictions (gold.json)
 
