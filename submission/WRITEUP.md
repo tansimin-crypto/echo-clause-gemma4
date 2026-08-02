@@ -13,7 +13,7 @@ EchoClause is an evidence-grounded reconciliation pipeline. It ingests four demo
 The architecture deliberately separates probabilistic perception from deterministic finance logic:
 
 1. **Gemma 4 multimodal extraction** reads images and audio, returning JSON `SourceClaim` objects with verbatim evidence quotes.
-2. **Deterministic normalization** converts raw text ("No hidden fees", "₦15,000 platform fee") into comparable numeric and boolean values.
+2. **Deterministic normalization** converts raw text ("No hidden fees", "$150 platform fee") into comparable numeric and boolean values.
 3. **Allowlisted function calling** lets Gemma invoke Pydantic-validated tools (`calculate_fee_percentage`, `compare_normalized_terms`, etc.) without arbitrary code execution.
 4. **Reconciliation** compares promise-side evidence against contract-side claims field by field.
 5. **Provenance artifacts** record model ID, prompt hashes, asset checksums, and raw model output for every run.
@@ -30,7 +30,7 @@ Gemma handles three critical capabilities:
 
 **Native audio understanding.** The sales pitch WAV is processed directly by Gemma. If native audio extraction fails, we disclose an ASR fallback using the bundled transcript — image processing always stays Gemma-native.
 
-**Function calling for financial reasoning.** When marketing says "no hidden fees" but the contract shows ₦15,000 on ₦100,000 principal, Gemma calls `calculate_fee_percentage(fee_amount=15000, principal=100000)` and receives a deterministic 15% result through our allowlisted registry.
+**Function calling for financial reasoning.** When marketing says "no hidden fees" but the contract shows $150 on $1,000 principal, Gemma calls `calculate_fee_percentage(fee_amount=150, principal=1000)` and receives a deterministic 15% result through our allowlisted registry.
 
 Every inference writes immutable JSON artifacts under `artifacts/runs/` with RAW model output, never synthetic placeholders.
 
@@ -40,9 +40,9 @@ Our frozen `gold.json` defines five contradictions for Nuru Credit:
 
 | Field | Promise | Contract |
 |-------|---------|----------|
-| Platform fee | No hidden fees | ₦15,000 |
-| Total repayment | ₦100,000 | ₦115,000 |
-| Late fee | One-time ₦2,000 | 5% per week |
+| Platform fee | No hidden fees | $150 |
+| Total repayment | $1,000 | $1,150 |
+| Late fee | One-time $20 | 5% per week |
 | Term | 30 days | 21 days |
 | Automatic debit | Disabled after repayment | Authorization enabled |
 
@@ -117,6 +117,17 @@ The notebook `notebooks/echo_clause_kaggle_demo.ipynb` installs the package, run
 Running Gemma 4 locally on Windows without CUDA proved impractical — Hugging Face timeouts and proxy issues blocked model download. Kaggle T4 with `HF_TOKEN` secrets is the intended production path for hackathon judges. Separating recorded replay from live inference let us complete R2–R8 while R1 awaits GPU verification.
 
 We also learned that synthetic audio (simple tone WAV) may not produce rich Gemma audio claims; the disclosed transcript fallback ensures the pipeline remains testable without misrepresenting native audio capability.
+
+## Multimodal capability audit (honest status)
+
+| Capability | Designed | Live verified | Shown in demo / video / pages |
+|------------|----------|---------------|------------------------------|
+| Image OCR / understanding | Yes — `GemmaRuntime.extract_claims_from_image` | **Not in committed artifacts** — all `runtime_spike_*.json` files show `NOT_RUN_GPU` or failed load on P100; no `"status": "PASSED"` run checked in | GitHub Pages + video: **recorded replay** from `recorded_claims.json`; claims tagged by `source_type` (advertisement, sales_audio, support_chat, contract) in `docs/data/demo.json` |
+| Audio native | Yes — `extract_claims_from_audio` + ASR fallback | **Not verified live** in repo artifacts | Audio tab shows WAV + transcript; extraction claims are from recorded fixture, not live inference |
+| Function calling | Yes — `run_function_call_demo` + allowlisted registry | **Deterministic validation only** (`deterministic_tool_validation.passed: true` without model) | Described in writeup; not animated as live FC in static demo |
+| Recorded replay | Yes — `recorded_claims.json` | **Yes** — offline pipeline + Pages | Explicit banner on `docs/index.html` |
+
+The Kaggle notebook runs the live multimodal code path when `runtime.load()` succeeds; otherwise it falls back to `use_recorded=True` and still validates 5/5 gold contradictions. We do **not** substitute synthetic model outputs for recorded or live Gemma JSON.
 
 ## Future Work
 
