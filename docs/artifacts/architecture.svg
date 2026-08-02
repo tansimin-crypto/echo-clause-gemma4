@@ -49,7 +49,7 @@
       <text x="75" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#0f766e">NORMALIZE</text>
       <text x="75" y="52" text-anchor="middle" font-size="10" fill="#64748b">Currency · Days</text>
       <text x="75" y="72" text-anchor="middle" font-size="10" fill="#64748b">Percent · Boolean</text>
-      <text x="75" y="100" text-anchor="middle" font-size="9" font-family="JetBrains Mono, monospace" fill="#475569">₦ · % · days</text>
+      <text x="75" y="100" text-anchor="middle" font-size="9" font-family="JetBrains Mono, monospace" fill="#475569">$ · % · days</text>
     </g>
 
     <text x="584" y="115" font-size="22" fill="#94a3b8">→</text>
