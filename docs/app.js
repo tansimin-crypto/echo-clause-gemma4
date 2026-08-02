@@ -31,8 +31,8 @@
   ];
 
   const SALES_TRANSCRIPT =
-    "You will repay exactly ₦100,000. There are no processing charges. " +
-    "Late payment is only a one-time ₦2,000 fee.";
+    "You will repay exactly $1,000. There are no processing charges. " +
+    "Late payment is only a one-time $20 fee.";
 
   let demoData = null;
   let claimsById = {};
