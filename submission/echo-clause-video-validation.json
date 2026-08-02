@@ -4,7 +4,7 @@
   "actual_duration_seconds": 90.0,
   "within_tolerance": true,
   "video": "D:\\kaggle\\gemma-finance\\echo-clause-gemma4\\submission\\echo-clause-demo-90s.mp4",
-  "video_sha256": "b859cb78bb9515ff481c58e346472093fa6972ff616454d95adf1dee23704eb7",
+  "video_sha256": "8b1e86056a6e8c58dee8656219349887cf7809b7caf9842dd93505db86f335d1",
   "srt": "D:\\kaggle\\gemma-finance\\echo-clause-gemma4\\submission\\echo-clause-demo-90s.srt",
   "vtt": "D:\\kaggle\\gemma-finance\\echo-clause-gemma4\\submission\\echo-clause-demo-90s.vtt",
   "bib_tooling": "D:\\CodexWorkspaces\\bib",
@@ -128,23 +128,23 @@
         },
         {
           "index": 2,
-          "caption": "A hidden platform fee of fifteen thousand naira",
-          "source_sample_frames": 66048,
-          "source_duration_seconds": 2.752,
+          "caption": "A hidden platform fee of one hundred fifty dollars",
+          "source_sample_frames": 77824,
+          "source_duration_seconds": 3.242667,
           "scene_start_seconds": 2.738,
-          "scene_end_seconds": 5.49,
+          "scene_end_seconds": 5.980667,
           "absolute_start_seconds": 46.738,
-          "absolute_end_seconds": 49.49
+          "absolute_end_seconds": 49.980667
         },
         {
           "index": 3,
           "caption": "never appeared in the marketing.",
           "source_sample_frames": 39936,
           "source_duration_seconds": 1.664,
-          "scene_start_seconds": 5.78,
-          "scene_end_seconds": 7.444,
-          "absolute_start_seconds": 49.78,
-          "absolute_end_seconds": 51.444
+          "scene_start_seconds": 6.270667,
+          "scene_end_seconds": 7.934667,
+          "absolute_start_seconds": 50.270667,
+          "absolute_end_seconds": 51.934667
         }
       ]
     },
@@ -166,13 +166,13 @@
         },
         {
           "index": 2,
-          "caption": "Promised no hidden fees — contract shows fifteen thousand naira. Status: contradicted.",
-          "source_sample_frames": 135168,
-          "source_duration_seconds": 5.632,
+          "caption": "Promised no hidden fees — contract shows one hundred fifty dollars. Status: contradicted.",
+          "source_sample_frames": 143360,
+          "source_duration_seconds": 5.973333,
           "scene_start_seconds": 2.794,
-          "scene_end_seconds": 8.426,
+          "scene_end_seconds": 8.767333,
           "absolute_start_seconds": 66.794,
-          "absolute_end_seconds": 72.426
+          "absolute_end_seconds": 72.767333
         }
       ]
     },
