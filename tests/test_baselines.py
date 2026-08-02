@@ -22,7 +22,7 @@ def _claim(field: ClaimField, raw: str, norm, stype: SourceType, cid: str) -> So
 def test_contract_only_ignores_promises():
     promise = [_claim(ClaimField.PLATFORM_FEE, "No fees", 0, SourceType.ADVERTISEMENT, "p1")]
     contract = [
-        _claim(ClaimField.PLATFORM_FEE, "Fee ₦1000", 1000, SourceType.CONTRACT, "c1")
+        _claim(ClaimField.PLATFORM_FEE, "Fee $10", 10, SourceType.CONTRACT, "c1")
     ]
     rows = contract_only_baseline(promise, contract)
     assert rows[0]["status"] == "HIDDEN_IN_CONTRACT"
@@ -38,7 +38,7 @@ def test_text_concat_detects_contradiction():
 
 
 def test_text_concat_supports_match():
-    promise = [_claim(ClaimField.PRINCIPAL, "₦50,000", 50000, SourceType.ADVERTISEMENT, "p1")]
-    contract = [_claim(ClaimField.PRINCIPAL, "₦50,000", 50000, SourceType.CONTRACT, "c1")]
+    promise = [_claim(ClaimField.PRINCIPAL, "$500", 500, SourceType.ADVERTISEMENT, "p1")]
+    contract = [_claim(ClaimField.PRINCIPAL, "$500", 500, SourceType.CONTRACT, "c1")]
     rows = text_concat_baseline(promise, contract)
     assert rows[0]["status"] == "SUPPORTED"
