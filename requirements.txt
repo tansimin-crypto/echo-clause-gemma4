@@ -1,0 +1,14 @@
+pydantic>=2.0
+pillow>=10.0
+
+# Gemma runtime (R1+) — install with: pip install -e ".[gemma]"
+torch>=2.2
+transformers>=4.50
+accelerate>=0.30
+bitsandbytes>=0.43
+sentencepiece>=0.2
+protobuf>=4.0
+
+# Dev
+pytest>=8.0
+ruff>=0.4
