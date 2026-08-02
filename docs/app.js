@@ -266,11 +266,11 @@
 
     const friendly = questions.map((q, i) => {
       const templates = [
-        "Why does the contract include a ₦15,000 platform fee not mentioned in the ad?",
+        "Why does the contract include a $150 platform fee not mentioned in the ad?",
         "The ad says 30 days — why does the contract specify 21 days?",
         "Support said no auto-debit — why is authorization enabled in the contract?",
         "Is the 5% weekly late fee compounded on the full outstanding balance?",
-        "Sales pitch promised ₦100,000 total — why does the contract show ₦115,000?",
+        "Sales pitch promised $1,000 total — why does the contract show $1,150?",
       ];
       return friendlyOverride(q, templates[i] || q);
     });
