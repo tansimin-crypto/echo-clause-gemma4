@@ -133,7 +133,7 @@ def reconcile_claims(
                 ),
                 clarification_question=(
                     f"What is the correct {field.value} — "
-                    f"as promised ({promise_value}) or as contracted ({contract_value})?"
+                    f"as promised ({promise_evidence}) or as contracted ({contract_rep.evidence_text})?"
                     if status == ComparisonStatus.CONTRADICTED
                     else None
                 ),
