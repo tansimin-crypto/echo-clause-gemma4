@@ -41,6 +41,8 @@ def kaggle_models_available() -> bool:
 
 MAX_E4B_LOAD_ATTEMPTS = 2
 
+DEFAULT_CURRENCY = "USD"
+
 DISCLAIMER = (
     "EchoClause compares representations across supplied evidence. "
     "It does not provide legal advice or determine legal enforceability."
